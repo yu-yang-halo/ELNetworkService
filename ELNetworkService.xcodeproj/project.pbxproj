@@ -6,10 +6,70 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		84C14AF41AF6FFD800B11B46 /* frameworkAggregate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 84C14AF71AF6FFD800B11B46 /* Build configuration list for PBXAggregateTarget "frameworkAggregate" */;
+			buildPhases = (
+				84C14AF81AF7001A00B11B46 /* Run Script */,
+			);
+			dependencies = (
+			);
+			name = frameworkAggregate;
+			productName = frameworkAggregate;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		182AD63D1AF2F90F00EC53D2 /* ELNetworkService.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD63C1AF2F90F00EC53D2 /* ELNetworkService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD6431AF2F90F00EC53D2 /* ELNetworkService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182AD6371AF2F90F00EC53D2 /* ELNetworkService.framework */; };
 		182AD64A1AF2F90F00EC53D2 /* ELNetworkServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6491AF2F90F00EC53D2 /* ELNetworkServiceTests.m */; };
+		182AD6561AF2FA7500EC53D2 /* ElApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6541AF2FA7500EC53D2 /* ElApiService.m */; };
+		182AD6571AF2FA7500EC53D2 /* ElApiService.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6551AF2FA7500EC53D2 /* ElApiService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD65B1AF2FAB100EC53D2 /* GDataDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6581AF2FAB100EC53D2 /* GDataDefines.h */; };
+		182AD65C1AF2FAB100EC53D2 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6591AF2FAB100EC53D2 /* GDataXMLNode.m */; };
+		182AD65D1AF2FAB100EC53D2 /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD65A1AF2FAB100EC53D2 /* GDataXMLNode.h */; };
+		182AD67B1AF2FB2800EC53D2 /* ELDeviceObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD65F1AF2FB2800EC53D2 /* ELDeviceObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD67C1AF2FB2800EC53D2 /* ELDeviceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6601AF2FB2800EC53D2 /* ELDeviceObject.m */; };
+		182AD67D1AF2FB2800EC53D2 /* ELScenario.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6611AF2FB2800EC53D2 /* ELScenario.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD67E1AF2FB2800EC53D2 /* ELScenario.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6621AF2FB2800EC53D2 /* ELScenario.m */; };
+		182AD67F1AF2FB2800EC53D2 /* ELSimpleTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6631AF2FB2800EC53D2 /* ELSimpleTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD6801AF2FB2800EC53D2 /* ELSimpleTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6641AF2FB2800EC53D2 /* ELSimpleTask.m */; };
+		182AD6811AF2FB2800EC53D2 /* ELDeviceObjectHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6651AF2FB2800EC53D2 /* ELDeviceObjectHolder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD6821AF2FB2800EC53D2 /* ELDeviceObjectHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6661AF2FB2800EC53D2 /* ELDeviceObjectHolder.m */; };
+		182AD6831AF2FB2800EC53D2 /* ELScenarioDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6671AF2FB2800EC53D2 /* ELScenarioDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD6841AF2FB2800EC53D2 /* ELScenarioDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6681AF2FB2800EC53D2 /* ELScenarioDetail.m */; };
+		182AD6851AF2FB2800EC53D2 /* ELAlertCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6691AF2FB2800EC53D2 /* ELAlertCondition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD6861AF2FB2800EC53D2 /* ELAlertCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD66A1AF2FB2800EC53D2 /* ELAlertCondition.m */; };
+		182AD6871AF2FB2800EC53D2 /* ELScheduleTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD66B1AF2FB2800EC53D2 /* ELScheduleTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD6881AF2FB2800EC53D2 /* ELScheduleTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD66C1AF2FB2800EC53D2 /* ELScheduleTask.m */; };
+		182AD6891AF2FB2800EC53D2 /* ELAlertEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD66D1AF2FB2800EC53D2 /* ELAlertEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD68A1AF2FB2800EC53D2 /* ELAlertEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD66E1AF2FB2800EC53D2 /* ELAlertEvent.m */; };
+		182AD68B1AF2FB2800EC53D2 /* ELAlertSchedule.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD66F1AF2FB2800EC53D2 /* ELAlertSchedule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD68C1AF2FB2800EC53D2 /* ELAlertSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6701AF2FB2800EC53D2 /* ELAlertSchedule.m */; };
+		182AD68D1AF2FB2800EC53D2 /* ELAlertAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6711AF2FB2800EC53D2 /* ELAlertAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD68E1AF2FB2800EC53D2 /* ELAlertAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6721AF2FB2800EC53D2 /* ELAlertAddress.m */; };
+		182AD68F1AF2FB2800EC53D2 /* ELUserInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6731AF2FB2800EC53D2 /* ELUserInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD6901AF2FB2800EC53D2 /* ELUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6741AF2FB2800EC53D2 /* ELUserInfo.m */; };
+		182AD6911AF2FB2800EC53D2 /* ELDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6751AF2FB2800EC53D2 /* ELDeviceInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD6921AF2FB2800EC53D2 /* ELDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6761AF2FB2800EC53D2 /* ELDeviceInfo.m */; };
+		182AD6931AF2FB2800EC53D2 /* ELFieldValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6771AF2FB2800EC53D2 /* ELFieldValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD6941AF2FB2800EC53D2 /* ELFieldValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6781AF2FB2800EC53D2 /* ELFieldValue.m */; };
+		182AD6951AF2FB2800EC53D2 /* ELPacketData.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6791AF2FB2800EC53D2 /* ELPacketData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD6961AF2FB2800EC53D2 /* ELPacketData.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD67A1AF2FB2800EC53D2 /* ELPacketData.m */; };
+		182AD69C1AF2FB7100EC53D2 /* ELClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6991AF2FB7100EC53D2 /* ELClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD69D1AF2FB7100EC53D2 /* ELField.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD69A1AF2FB7100EC53D2 /* ELField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD69E1AF2FB7100EC53D2 /* ELErrorCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD69B1AF2FB7100EC53D2 /* ELErrorCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD6A11AF2FBC000EC53D2 /* ELShareContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD69F1AF2FBC000EC53D2 /* ELShareContext.h */; };
+		182AD6A21AF2FBC000EC53D2 /* ELShareContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6A01AF2FBC000EC53D2 /* ELShareContext.m */; };
+		182AD6AD1AF301A800EC53D2 /* WsqMD5Util.mm in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6A51AF301A800EC53D2 /* WsqMD5Util.mm */; };
+		182AD6AE1AF301A800EC53D2 /* WsqMD5Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6A61AF301A800EC53D2 /* WsqMD5Util.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD6B31AF301A800EC53D2 /* Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6AB1AF301A800EC53D2 /* Util.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		182AD6B41AF301A800EC53D2 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6AC1AF301A800EC53D2 /* Util.m */; };
+		8476D46A1B296658009A2621 /* ELClassObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 8476D4681B296658009A2621 /* ELClassObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8476D46B1B296658009A2621 /* ELClassObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476D4691B296658009A2621 /* ELClassObject.m */; };
+		8476D46E1B2967C2009A2621 /* ELClassField.h in Headers */ = {isa = PBXBuildFile; fileRef = 8476D46C1B2967C2009A2621 /* ELClassField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8476D46F1B2967C2009A2621 /* ELClassField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476D46D1B2967C2009A2621 /* ELClassField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +89,52 @@
 		182AD6421AF2F90F00EC53D2 /* ELNetworkServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELNetworkServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		182AD6481AF2F90F00EC53D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		182AD6491AF2F90F00EC53D2 /* ELNetworkServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELNetworkServiceTests.m; sourceTree = "<group>"; };
+		182AD6541AF2FA7500EC53D2 /* ElApiService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElApiService.m; sourceTree = "<group>"; };
+		182AD6551AF2FA7500EC53D2 /* ElApiService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElApiService.h; sourceTree = "<group>"; };
+		182AD6581AF2FAB100EC53D2 /* GDataDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataDefines.h; sourceTree = "<group>"; };
+		182AD6591AF2FAB100EC53D2 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		182AD65A1AF2FAB100EC53D2 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		182AD65F1AF2FB2800EC53D2 /* ELDeviceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELDeviceObject.h; sourceTree = "<group>"; };
+		182AD6601AF2FB2800EC53D2 /* ELDeviceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELDeviceObject.m; sourceTree = "<group>"; };
+		182AD6611AF2FB2800EC53D2 /* ELScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELScenario.h; sourceTree = "<group>"; };
+		182AD6621AF2FB2800EC53D2 /* ELScenario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELScenario.m; sourceTree = "<group>"; };
+		182AD6631AF2FB2800EC53D2 /* ELSimpleTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELSimpleTask.h; sourceTree = "<group>"; };
+		182AD6641AF2FB2800EC53D2 /* ELSimpleTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELSimpleTask.m; sourceTree = "<group>"; };
+		182AD6651AF2FB2800EC53D2 /* ELDeviceObjectHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELDeviceObjectHolder.h; sourceTree = "<group>"; };
+		182AD6661AF2FB2800EC53D2 /* ELDeviceObjectHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELDeviceObjectHolder.m; sourceTree = "<group>"; };
+		182AD6671AF2FB2800EC53D2 /* ELScenarioDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELScenarioDetail.h; sourceTree = "<group>"; };
+		182AD6681AF2FB2800EC53D2 /* ELScenarioDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELScenarioDetail.m; sourceTree = "<group>"; };
+		182AD6691AF2FB2800EC53D2 /* ELAlertCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELAlertCondition.h; sourceTree = "<group>"; };
+		182AD66A1AF2FB2800EC53D2 /* ELAlertCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELAlertCondition.m; sourceTree = "<group>"; };
+		182AD66B1AF2FB2800EC53D2 /* ELScheduleTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELScheduleTask.h; sourceTree = "<group>"; };
+		182AD66C1AF2FB2800EC53D2 /* ELScheduleTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELScheduleTask.m; sourceTree = "<group>"; };
+		182AD66D1AF2FB2800EC53D2 /* ELAlertEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELAlertEvent.h; sourceTree = "<group>"; };
+		182AD66E1AF2FB2800EC53D2 /* ELAlertEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELAlertEvent.m; sourceTree = "<group>"; };
+		182AD66F1AF2FB2800EC53D2 /* ELAlertSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELAlertSchedule.h; sourceTree = "<group>"; };
+		182AD6701AF2FB2800EC53D2 /* ELAlertSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELAlertSchedule.m; sourceTree = "<group>"; };
+		182AD6711AF2FB2800EC53D2 /* ELAlertAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELAlertAddress.h; sourceTree = "<group>"; };
+		182AD6721AF2FB2800EC53D2 /* ELAlertAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELAlertAddress.m; sourceTree = "<group>"; };
+		182AD6731AF2FB2800EC53D2 /* ELUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELUserInfo.h; sourceTree = "<group>"; };
+		182AD6741AF2FB2800EC53D2 /* ELUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELUserInfo.m; sourceTree = "<group>"; };
+		182AD6751AF2FB2800EC53D2 /* ELDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELDeviceInfo.h; sourceTree = "<group>"; };
+		182AD6761AF2FB2800EC53D2 /* ELDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELDeviceInfo.m; sourceTree = "<group>"; };
+		182AD6771AF2FB2800EC53D2 /* ELFieldValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELFieldValue.h; sourceTree = "<group>"; };
+		182AD6781AF2FB2800EC53D2 /* ELFieldValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELFieldValue.m; sourceTree = "<group>"; };
+		182AD6791AF2FB2800EC53D2 /* ELPacketData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELPacketData.h; sourceTree = "<group>"; };
+		182AD67A1AF2FB2800EC53D2 /* ELPacketData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELPacketData.m; sourceTree = "<group>"; };
+		182AD6991AF2FB7100EC53D2 /* ELClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELClass.h; sourceTree = "<group>"; };
+		182AD69A1AF2FB7100EC53D2 /* ELField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELField.h; sourceTree = "<group>"; };
+		182AD69B1AF2FB7100EC53D2 /* ELErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELErrorCode.h; sourceTree = "<group>"; };
+		182AD69F1AF2FBC000EC53D2 /* ELShareContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELShareContext.h; sourceTree = "<group>"; };
+		182AD6A01AF2FBC000EC53D2 /* ELShareContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELShareContext.m; sourceTree = "<group>"; };
+		182AD6A51AF301A800EC53D2 /* WsqMD5Util.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WsqMD5Util.mm; sourceTree = "<group>"; };
+		182AD6A61AF301A800EC53D2 /* WsqMD5Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WsqMD5Util.h; sourceTree = "<group>"; };
+		182AD6AB1AF301A800EC53D2 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		182AD6AC1AF301A800EC53D2 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		8476D4681B296658009A2621 /* ELClassObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELClassObject.h; sourceTree = "<group>"; };
+		8476D4691B296658009A2621 /* ELClassObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELClassObject.m; sourceTree = "<group>"; };
+		8476D46C1B2967C2009A2621 /* ELClassField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELClassField.h; sourceTree = "<group>"; };
+		8476D46D1B2967C2009A2621 /* ELClassField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELClassField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +177,14 @@
 		182AD6391AF2F90F00EC53D2 /* ELNetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				182AD6A51AF301A800EC53D2 /* WsqMD5Util.mm */,
+				182AD6A61AF301A800EC53D2 /* WsqMD5Util.h */,
+				182AD6AB1AF301A800EC53D2 /* Util.h */,
+				182AD6AC1AF301A800EC53D2 /* Util.m */,
+				182AD6981AF2FB5800EC53D2 /* constants */,
+				182AD6971AF2FB3F00EC53D2 /* singleton */,
+				182AD65E1AF2FB0200EC53D2 /* vo */,
+				182AD6531AF2F9FA00EC53D2 /* restapi */,
 				182AD63C1AF2F90F00EC53D2 /* ELNetworkService.h */,
 				182AD63A1AF2F90F00EC53D2 /* Supporting Files */,
 			);
@@ -102,6 +216,76 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		182AD6531AF2F9FA00EC53D2 /* restapi */ = {
+			isa = PBXGroup;
+			children = (
+				182AD6541AF2FA7500EC53D2 /* ElApiService.m */,
+				182AD6551AF2FA7500EC53D2 /* ElApiService.h */,
+				182AD6581AF2FAB100EC53D2 /* GDataDefines.h */,
+				182AD6591AF2FAB100EC53D2 /* GDataXMLNode.m */,
+				182AD65A1AF2FAB100EC53D2 /* GDataXMLNode.h */,
+			);
+			name = restapi;
+			sourceTree = "<group>";
+		};
+		182AD65E1AF2FB0200EC53D2 /* vo */ = {
+			isa = PBXGroup;
+			children = (
+				182AD65F1AF2FB2800EC53D2 /* ELDeviceObject.h */,
+				182AD6601AF2FB2800EC53D2 /* ELDeviceObject.m */,
+				182AD6611AF2FB2800EC53D2 /* ELScenario.h */,
+				182AD6621AF2FB2800EC53D2 /* ELScenario.m */,
+				182AD6631AF2FB2800EC53D2 /* ELSimpleTask.h */,
+				182AD6641AF2FB2800EC53D2 /* ELSimpleTask.m */,
+				182AD6651AF2FB2800EC53D2 /* ELDeviceObjectHolder.h */,
+				182AD6661AF2FB2800EC53D2 /* ELDeviceObjectHolder.m */,
+				182AD6671AF2FB2800EC53D2 /* ELScenarioDetail.h */,
+				182AD6681AF2FB2800EC53D2 /* ELScenarioDetail.m */,
+				182AD6691AF2FB2800EC53D2 /* ELAlertCondition.h */,
+				182AD66A1AF2FB2800EC53D2 /* ELAlertCondition.m */,
+				182AD66B1AF2FB2800EC53D2 /* ELScheduleTask.h */,
+				182AD66C1AF2FB2800EC53D2 /* ELScheduleTask.m */,
+				182AD66D1AF2FB2800EC53D2 /* ELAlertEvent.h */,
+				182AD66E1AF2FB2800EC53D2 /* ELAlertEvent.m */,
+				182AD66F1AF2FB2800EC53D2 /* ELAlertSchedule.h */,
+				182AD6701AF2FB2800EC53D2 /* ELAlertSchedule.m */,
+				182AD6711AF2FB2800EC53D2 /* ELAlertAddress.h */,
+				182AD6721AF2FB2800EC53D2 /* ELAlertAddress.m */,
+				182AD6731AF2FB2800EC53D2 /* ELUserInfo.h */,
+				182AD6741AF2FB2800EC53D2 /* ELUserInfo.m */,
+				182AD6751AF2FB2800EC53D2 /* ELDeviceInfo.h */,
+				182AD6761AF2FB2800EC53D2 /* ELDeviceInfo.m */,
+				182AD6771AF2FB2800EC53D2 /* ELFieldValue.h */,
+				182AD6781AF2FB2800EC53D2 /* ELFieldValue.m */,
+				182AD6791AF2FB2800EC53D2 /* ELPacketData.h */,
+				182AD67A1AF2FB2800EC53D2 /* ELPacketData.m */,
+				8476D4681B296658009A2621 /* ELClassObject.h */,
+				8476D4691B296658009A2621 /* ELClassObject.m */,
+				8476D46C1B2967C2009A2621 /* ELClassField.h */,
+				8476D46D1B2967C2009A2621 /* ELClassField.m */,
+			);
+			name = vo;
+			sourceTree = "<group>";
+		};
+		182AD6971AF2FB3F00EC53D2 /* singleton */ = {
+			isa = PBXGroup;
+			children = (
+				182AD69F1AF2FBC000EC53D2 /* ELShareContext.h */,
+				182AD6A01AF2FBC000EC53D2 /* ELShareContext.m */,
+			);
+			name = singleton;
+			sourceTree = "<group>";
+		};
+		182AD6981AF2FB5800EC53D2 /* constants */ = {
+			isa = PBXGroup;
+			children = (
+				182AD6991AF2FB7100EC53D2 /* ELClass.h */,
+				182AD69A1AF2FB7100EC53D2 /* ELField.h */,
+				182AD69B1AF2FB7100EC53D2 /* ELErrorCode.h */,
+			);
+			name = constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -109,7 +293,32 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182AD6B31AF301A800EC53D2 /* Util.h in Headers */,
+				182AD69E1AF2FB7100EC53D2 /* ELErrorCode.h in Headers */,
+				182AD6911AF2FB2800EC53D2 /* ELDeviceInfo.h in Headers */,
+				182AD68B1AF2FB2800EC53D2 /* ELAlertSchedule.h in Headers */,
+				182AD6951AF2FB2800EC53D2 /* ELPacketData.h in Headers */,
+				182AD67B1AF2FB2800EC53D2 /* ELDeviceObject.h in Headers */,
+				182AD6851AF2FB2800EC53D2 /* ELAlertCondition.h in Headers */,
+				182AD6891AF2FB2800EC53D2 /* ELAlertEvent.h in Headers */,
+				182AD6831AF2FB2800EC53D2 /* ELScenarioDetail.h in Headers */,
+				182AD69D1AF2FB7100EC53D2 /* ELField.h in Headers */,
+				182AD6811AF2FB2800EC53D2 /* ELDeviceObjectHolder.h in Headers */,
+				182AD69C1AF2FB7100EC53D2 /* ELClass.h in Headers */,
+				182AD6871AF2FB2800EC53D2 /* ELScheduleTask.h in Headers */,
+				182AD68F1AF2FB2800EC53D2 /* ELUserInfo.h in Headers */,
+				182AD67F1AF2FB2800EC53D2 /* ELSimpleTask.h in Headers */,
+				182AD6931AF2FB2800EC53D2 /* ELFieldValue.h in Headers */,
+				182AD6AE1AF301A800EC53D2 /* WsqMD5Util.h in Headers */,
+				182AD6571AF2FA7500EC53D2 /* ElApiService.h in Headers */,
+				182AD67D1AF2FB2800EC53D2 /* ELScenario.h in Headers */,
+				8476D46E1B2967C2009A2621 /* ELClassField.h in Headers */,
+				8476D46A1B296658009A2621 /* ELClassObject.h in Headers */,
+				182AD68D1AF2FB2800EC53D2 /* ELAlertAddress.h in Headers */,
 				182AD63D1AF2F90F00EC53D2 /* ELNetworkService.h in Headers */,
+				182AD6A11AF2FBC000EC53D2 /* ELShareContext.h in Headers */,
+				182AD65B1AF2FAB100EC53D2 /* GDataDefines.h in Headers */,
+				182AD65D1AF2FAB100EC53D2 /* GDataXMLNode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +376,9 @@
 					182AD6411AF2F90F00EC53D2 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
+					84C14AF41AF6FFD800B11B46 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 182AD6311AF2F90F00EC53D2 /* Build configuration list for PBXProject "ELNetworkService" */;
@@ -183,6 +395,7 @@
 			targets = (
 				182AD6361AF2F90F00EC53D2 /* ELNetworkService */,
 				182AD6411AF2F90F00EC53D2 /* ELNetworkServiceTests */,
+				84C14AF41AF6FFD800B11B46 /* frameworkAggregate */,
 			);
 		};
 /* End PBXProject section */
@@ -204,11 +417,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		84C14AF81AF7001A00B11B46 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Sets the target folders and the final framework product.\n# 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME\n# 例如: FMK_NAME = \"MyFramework\"\nFMK_NAME=${PROJECT_NAME}\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\nxcodebuild -configuration Release -target \"${FMK_NAME}\" -sdk iphonesimulator -arch i386 -arch x86_64 clean build\nxcodebuild -configuration  Release -target \"${FMK_NAME}\" -sdk iphoneos -arch armv7 -arch armv7s -arch arm64 clean build\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\nmkdir -p \"${INSTALL_DIR}\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\nrm -r \"${WRK_DIR}\"\nopen \"${INSTALL_DIR}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		182AD6321AF2F90F00EC53D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182AD6841AF2FB2800EC53D2 /* ELScenarioDetail.m in Sources */,
+				182AD68C1AF2FB2800EC53D2 /* ELAlertSchedule.m in Sources */,
+				182AD6881AF2FB2800EC53D2 /* ELScheduleTask.m in Sources */,
+				182AD67E1AF2FB2800EC53D2 /* ELScenario.m in Sources */,
+				182AD6AD1AF301A800EC53D2 /* WsqMD5Util.mm in Sources */,
+				8476D46F1B2967C2009A2621 /* ELClassField.m in Sources */,
+				182AD6B41AF301A800EC53D2 /* Util.m in Sources */,
+				182AD6941AF2FB2800EC53D2 /* ELFieldValue.m in Sources */,
+				182AD6821AF2FB2800EC53D2 /* ELDeviceObjectHolder.m in Sources */,
+				8476D46B1B296658009A2621 /* ELClassObject.m in Sources */,
+				182AD68A1AF2FB2800EC53D2 /* ELAlertEvent.m in Sources */,
+				182AD6921AF2FB2800EC53D2 /* ELDeviceInfo.m in Sources */,
+				182AD6901AF2FB2800EC53D2 /* ELUserInfo.m in Sources */,
+				182AD6561AF2FA7500EC53D2 /* ElApiService.m in Sources */,
+				182AD6A21AF2FBC000EC53D2 /* ELShareContext.m in Sources */,
+				182AD67C1AF2FB2800EC53D2 /* ELDeviceObject.m in Sources */,
+				182AD6861AF2FB2800EC53D2 /* ELAlertCondition.m in Sources */,
+				182AD6961AF2FB2800EC53D2 /* ELPacketData.m in Sources */,
+				182AD65C1AF2FAB100EC53D2 /* GDataXMLNode.m in Sources */,
+				182AD68E1AF2FB2800EC53D2 /* ELAlertAddress.m in Sources */,
+				182AD6801AF2FB2800EC53D2 /* ELSimpleTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,30 +573,54 @@
 		182AD64E1AF2F90F00EC53D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = ELNetworkService/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = mh_dylib;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
+				VALID_ARCHS = "armv7 armv7s arm64 i386 x86_64";
 			};
 			name = Debug;
 		};
 		182AD64F1AF2F90F00EC53D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = ELNetworkService/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = mh_dylib;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
+				VALID_ARCHS = "armv7 armv7s arm64 i386 x86_64";
 			};
 			name = Release;
 		};
@@ -379,6 +654,22 @@
 			};
 			name = Release;
 		};
+		84C14AF51AF6FFD800B11B46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		84C14AF61AF6FFD800B11B46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -398,6 +689,7 @@
 				182AD64F1AF2F90F00EC53D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		182AD6501AF2F90F00EC53D2 /* Build configuration list for PBXNativeTarget "ELNetworkServiceTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +698,16 @@
 				182AD6521AF2F90F00EC53D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C14AF71AF6FFD800B11B46 /* Build configuration list for PBXAggregateTarget "frameworkAggregate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C14AF51AF6FFD800B11B46 /* Debug */,
+				84C14AF61AF6FFD800B11B46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
