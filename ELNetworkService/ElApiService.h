@@ -37,8 +37,8 @@ extern NSString *kErrorAlertNotification;
 
 typedef NS_ENUM(NSInteger, HYLPLATFORM){
    HYLPLATFORM_ELHOME,
-   HYLPLATFORM_DEVELOPER,
-    HYLPLATFORM_TEST,
+   HYLPLATFORM_DEVELOPER,//可自由切换服务器地址
+   HYLPLATFORM_TEST,
 };
 
 static ElApiService* shareService=nil;
@@ -46,7 +46,13 @@ static ElApiService* shareService=nil;
     
 }
 
-@property(nonatomic,retain) NSString* connect_header;
+@property(nonatomic,retain) NSString *connect_header;
+
++(NSString *)currentIPAddress;
++(void)setCurrentIPAddress:(NSString *)ipaddr;
+
+
+
 +(void)setPlatformType:(HYLPLATFORM) platform;
 
 +(ElApiService *) shareElApiService;

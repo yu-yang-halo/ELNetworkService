@@ -41,6 +41,7 @@
 -(void)sysLogin:(NSString *)name andPassword:(NSString *)password withYN:(BOOL)logoutYN;
 #pragma mark 网络错误汇报
 -(void)notificationErrorCode:(NSString *)errorCode;
+
 @end
 
 @implementation ElApiService (ClassData)
@@ -167,8 +168,8 @@
 }
 
 @end
-static NSString *requestURL=ELSERVICE_URL;
-static NSInteger _platform=HYLPLATFORM_ELHOME;
+static NSString *requestURL=DEVELOPER_URL;
+static NSInteger _platform=HYLPLATFORM_DEVELOPER;
 
 
 @implementation ElApiService
@@ -181,12 +182,30 @@ static NSInteger _platform=HYLPLATFORM_ELHOME;
         requestURL=TEST_URL;
     }
     _platform=platform;
+    
+    
     if(shareService!=nil){
         [shareService release];
         shareService=nil;
     }
     
+    
 }
+
++(NSString *)currentIPAddress{
+    return requestURL;
+}
++(void)setCurrentIPAddress:(NSString *)ipaddr{
+    if(requestURL!=ipaddr){
+        [requestURL release];
+        requestURL=[ipaddr retain];
+    }
+    if(shareService!=nil){
+        [shareService release];
+        shareService=nil;
+    }
+}
+
 +(ElApiService *) shareElApiService{
     @synchronized([ElApiService class]){
         if(shareService==nil){
@@ -1432,14 +1451,8 @@ NSString *kErrorAlertNotification=@"key_error_notifiaction";
         NSString *errorDescription=nil;
         errorDescription=error.localizedDescription;
         dispatch_async(dispatch_get_main_queue(), ^{
-           // [YYProgress dismiss];
-//            SIAlertView *alertView=[[SIAlertView alloc] initWithTitle:@"提示" andMessage:errorDescription];
-//            [alertView addButtonWithTitle:@"确定" type:(SIAlertViewButtonTypeDestructive) handler:^(SIAlertView *alertView) {
-//                
-//                
-//            }];
-//            [alertView show];
-            ////[OMGToast showWithText:errorDescription];
+            
+            [self notificationErrorCode:errorDescription];
             
         });
     }
