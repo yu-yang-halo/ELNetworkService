@@ -29,9 +29,6 @@
 - (void)testExample {
     // This is an example of a functional test case.
    XCTAssert(YES, @"Pass");
-    
-   ELClassObject *clsobj=[[ElApiService shareElApiService] getClassById:20];
-    XCTAssertNil(clsobj);
 }
 
 - (void)testPerformanceExample {

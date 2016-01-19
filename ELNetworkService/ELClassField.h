@@ -31,4 +31,6 @@ typedef NS_ENUM(NSInteger,HYLWidgetStyle){
 @property(nonatomic,retain) NSString*  icon;
 @property(nonatomic,assign) NSInteger  widget;
 
+@property(nonatomic,assign) BOOL       disableYN;
+
 @end

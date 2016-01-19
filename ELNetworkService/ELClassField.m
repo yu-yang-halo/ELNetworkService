@@ -25,6 +25,8 @@
     [aCoder encodeObject:self.icon forKey:@"icon"];
     [aCoder encodeInt:self.widget forKey:@"widget"];
     
+    [aCoder encodeBool:self.disableYN forKey:@"disableYN"];
+    
 }
 - (id)initWithCoder:(NSCoder *)aDecoder{
     if(self=[super init]){
@@ -41,6 +43,8 @@
         
         self.icon=[aDecoder decodeObjectForKey:@"icon"];
         self.widget=[aDecoder decodeIntForKey:@"widget"];
+        
+        self.disableYN=[aDecoder decodeBoolForKey:@"disableYN"];
     }
     return self;
 }

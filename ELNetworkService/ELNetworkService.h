@@ -32,7 +32,6 @@ FOUNDATION_EXPORT const unsigned char ELNetworkServiceVersionString[];
 #import <ELNetworkService/ELErrorCode.h>
 #import <ELNetworkService/ELField.h>
 #import <ELNetworkService/ELFieldValue.h>
-#import <ELNetworkService/ELNetworkService.h>
 #import <ELNetworkService/ELPacketData.h>
 #import <ELNetworkService/ELScenario.h>
 #import <ELNetworkService/ELScenarioDetail.h>

@@ -14,6 +14,7 @@
 				84C14AF81AF7001A00B11B46 /* Run Script */,
 			);
 			dependencies = (
+				84444F561B54988400600337 /* PBXTargetDependency */,
 			);
 			name = frameworkAggregate;
 			productName = frameworkAggregate;
@@ -21,59 +22,63 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		182AD63D1AF2F90F00EC53D2 /* ELNetworkService.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD63C1AF2F90F00EC53D2 /* ELNetworkService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD6431AF2F90F00EC53D2 /* ELNetworkService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182AD6371AF2F90F00EC53D2 /* ELNetworkService.framework */; };
 		182AD64A1AF2F90F00EC53D2 /* ELNetworkServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6491AF2F90F00EC53D2 /* ELNetworkServiceTests.m */; };
 		182AD6561AF2FA7500EC53D2 /* ElApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6541AF2FA7500EC53D2 /* ElApiService.m */; };
-		182AD6571AF2FA7500EC53D2 /* ElApiService.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6551AF2FA7500EC53D2 /* ElApiService.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		182AD65B1AF2FAB100EC53D2 /* GDataDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6581AF2FAB100EC53D2 /* GDataDefines.h */; };
 		182AD65C1AF2FAB100EC53D2 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6591AF2FAB100EC53D2 /* GDataXMLNode.m */; };
-		182AD65D1AF2FAB100EC53D2 /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD65A1AF2FAB100EC53D2 /* GDataXMLNode.h */; };
-		182AD67B1AF2FB2800EC53D2 /* ELDeviceObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD65F1AF2FB2800EC53D2 /* ELDeviceObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD67C1AF2FB2800EC53D2 /* ELDeviceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6601AF2FB2800EC53D2 /* ELDeviceObject.m */; };
-		182AD67D1AF2FB2800EC53D2 /* ELScenario.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6611AF2FB2800EC53D2 /* ELScenario.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD67E1AF2FB2800EC53D2 /* ELScenario.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6621AF2FB2800EC53D2 /* ELScenario.m */; };
-		182AD67F1AF2FB2800EC53D2 /* ELSimpleTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6631AF2FB2800EC53D2 /* ELSimpleTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD6801AF2FB2800EC53D2 /* ELSimpleTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6641AF2FB2800EC53D2 /* ELSimpleTask.m */; };
-		182AD6811AF2FB2800EC53D2 /* ELDeviceObjectHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6651AF2FB2800EC53D2 /* ELDeviceObjectHolder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD6821AF2FB2800EC53D2 /* ELDeviceObjectHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6661AF2FB2800EC53D2 /* ELDeviceObjectHolder.m */; };
-		182AD6831AF2FB2800EC53D2 /* ELScenarioDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6671AF2FB2800EC53D2 /* ELScenarioDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD6841AF2FB2800EC53D2 /* ELScenarioDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6681AF2FB2800EC53D2 /* ELScenarioDetail.m */; };
-		182AD6851AF2FB2800EC53D2 /* ELAlertCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6691AF2FB2800EC53D2 /* ELAlertCondition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD6861AF2FB2800EC53D2 /* ELAlertCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD66A1AF2FB2800EC53D2 /* ELAlertCondition.m */; };
-		182AD6871AF2FB2800EC53D2 /* ELScheduleTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD66B1AF2FB2800EC53D2 /* ELScheduleTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD6881AF2FB2800EC53D2 /* ELScheduleTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD66C1AF2FB2800EC53D2 /* ELScheduleTask.m */; };
-		182AD6891AF2FB2800EC53D2 /* ELAlertEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD66D1AF2FB2800EC53D2 /* ELAlertEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD68A1AF2FB2800EC53D2 /* ELAlertEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD66E1AF2FB2800EC53D2 /* ELAlertEvent.m */; };
-		182AD68B1AF2FB2800EC53D2 /* ELAlertSchedule.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD66F1AF2FB2800EC53D2 /* ELAlertSchedule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD68C1AF2FB2800EC53D2 /* ELAlertSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6701AF2FB2800EC53D2 /* ELAlertSchedule.m */; };
-		182AD68D1AF2FB2800EC53D2 /* ELAlertAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6711AF2FB2800EC53D2 /* ELAlertAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD68E1AF2FB2800EC53D2 /* ELAlertAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6721AF2FB2800EC53D2 /* ELAlertAddress.m */; };
-		182AD68F1AF2FB2800EC53D2 /* ELUserInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6731AF2FB2800EC53D2 /* ELUserInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD6901AF2FB2800EC53D2 /* ELUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6741AF2FB2800EC53D2 /* ELUserInfo.m */; };
-		182AD6911AF2FB2800EC53D2 /* ELDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6751AF2FB2800EC53D2 /* ELDeviceInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD6921AF2FB2800EC53D2 /* ELDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6761AF2FB2800EC53D2 /* ELDeviceInfo.m */; };
-		182AD6931AF2FB2800EC53D2 /* ELFieldValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6771AF2FB2800EC53D2 /* ELFieldValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD6941AF2FB2800EC53D2 /* ELFieldValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6781AF2FB2800EC53D2 /* ELFieldValue.m */; };
-		182AD6951AF2FB2800EC53D2 /* ELPacketData.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6791AF2FB2800EC53D2 /* ELPacketData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD6961AF2FB2800EC53D2 /* ELPacketData.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD67A1AF2FB2800EC53D2 /* ELPacketData.m */; };
-		182AD69C1AF2FB7100EC53D2 /* ELClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6991AF2FB7100EC53D2 /* ELClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		182AD69D1AF2FB7100EC53D2 /* ELField.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD69A1AF2FB7100EC53D2 /* ELField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		182AD69E1AF2FB7100EC53D2 /* ELErrorCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD69B1AF2FB7100EC53D2 /* ELErrorCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		182AD6A11AF2FBC000EC53D2 /* ELShareContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD69F1AF2FBC000EC53D2 /* ELShareContext.h */; };
 		182AD6A21AF2FBC000EC53D2 /* ELShareContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6A01AF2FBC000EC53D2 /* ELShareContext.m */; };
 		182AD6AD1AF301A800EC53D2 /* WsqMD5Util.mm in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6A51AF301A800EC53D2 /* WsqMD5Util.mm */; };
-		182AD6AE1AF301A800EC53D2 /* WsqMD5Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6A61AF301A800EC53D2 /* WsqMD5Util.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		182AD6B31AF301A800EC53D2 /* Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6AB1AF301A800EC53D2 /* Util.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182AD6B41AF301A800EC53D2 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD6AC1AF301A800EC53D2 /* Util.m */; };
-		8476D46A1B296658009A2621 /* ELClassObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 8476D4681B296658009A2621 /* ELClassObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F691B549AD600600337 /* WsqMD5Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6A61AF301A800EC53D2 /* WsqMD5Util.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F6A1B549AD600600337 /* Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6AB1AF301A800EC53D2 /* Util.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F6B1B549ADC00600337 /* ELClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6991AF2FB7100EC53D2 /* ELClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F6C1B549AE300600337 /* ELField.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD69A1AF2FB7100EC53D2 /* ELField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F6D1B549AE300600337 /* ELErrorCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD69B1AF2FB7100EC53D2 /* ELErrorCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F6E1B549AF800600337 /* ELDeviceObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD65F1AF2FB2800EC53D2 /* ELDeviceObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F6F1B549AF800600337 /* ELScenario.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6611AF2FB2800EC53D2 /* ELScenario.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F701B549AF800600337 /* ELSimpleTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6631AF2FB2800EC53D2 /* ELSimpleTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F711B549AF800600337 /* ELDeviceObjectHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6651AF2FB2800EC53D2 /* ELDeviceObjectHolder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F721B549AF800600337 /* ELScenarioDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6671AF2FB2800EC53D2 /* ELScenarioDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F731B549AF800600337 /* ELAlertCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6691AF2FB2800EC53D2 /* ELAlertCondition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F741B549B0800600337 /* ELScheduleTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD66B1AF2FB2800EC53D2 /* ELScheduleTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F751B549B0800600337 /* ELAlertSchedule.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD66F1AF2FB2800EC53D2 /* ELAlertSchedule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F761B549B1800600337 /* ELAlertEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD66D1AF2FB2800EC53D2 /* ELAlertEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F771B549B1800600337 /* ELAlertAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6711AF2FB2800EC53D2 /* ELAlertAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F781B549B1800600337 /* ELUserInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6731AF2FB2800EC53D2 /* ELUserInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F791B549B1800600337 /* ELDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6751AF2FB2800EC53D2 /* ELDeviceInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F7A1B549B1800600337 /* ELFieldValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6771AF2FB2800EC53D2 /* ELFieldValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F7B1B549B1800600337 /* ELPacketData.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6791AF2FB2800EC53D2 /* ELPacketData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F7C1B549B1800600337 /* ELClassObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 8476D4681B296658009A2621 /* ELClassObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F7D1B549B2000600337 /* ELClassField.h in Headers */ = {isa = PBXBuildFile; fileRef = 8476D46C1B2967C2009A2621 /* ELClassField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F7E1B549B2C00600337 /* ElApiService.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD6551AF2FA7500EC53D2 /* ElApiService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84444F7F1B549B2C00600337 /* ELNetworkService.h in Headers */ = {isa = PBXBuildFile; fileRef = 182AD63C1AF2F90F00EC53D2 /* ELNetworkService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8476D46B1B296658009A2621 /* ELClassObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476D4691B296658009A2621 /* ELClassObject.m */; };
-		8476D46E1B2967C2009A2621 /* ELClassField.h in Headers */ = {isa = PBXBuildFile; fileRef = 8476D46C1B2967C2009A2621 /* ELClassField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8476D46F1B2967C2009A2621 /* ELClassField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476D46D1B2967C2009A2621 /* ELClassField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		182AD6441AF2F90F00EC53D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 182AD62E1AF2F90F00EC53D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 182AD6361AF2F90F00EC53D2;
+			remoteInfo = ELNetworkService;
+		};
+		84444F551B54988400600337 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 182AD62E1AF2F90F00EC53D2 /* Project object */;
 			proxyType = 1;
@@ -293,32 +298,29 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				182AD6B31AF301A800EC53D2 /* Util.h in Headers */,
-				182AD69E1AF2FB7100EC53D2 /* ELErrorCode.h in Headers */,
-				182AD6911AF2FB2800EC53D2 /* ELDeviceInfo.h in Headers */,
-				182AD68B1AF2FB2800EC53D2 /* ELAlertSchedule.h in Headers */,
-				182AD6951AF2FB2800EC53D2 /* ELPacketData.h in Headers */,
-				182AD67B1AF2FB2800EC53D2 /* ELDeviceObject.h in Headers */,
-				182AD6851AF2FB2800EC53D2 /* ELAlertCondition.h in Headers */,
-				182AD6891AF2FB2800EC53D2 /* ELAlertEvent.h in Headers */,
-				182AD6831AF2FB2800EC53D2 /* ELScenarioDetail.h in Headers */,
-				182AD69D1AF2FB7100EC53D2 /* ELField.h in Headers */,
-				182AD6811AF2FB2800EC53D2 /* ELDeviceObjectHolder.h in Headers */,
-				182AD69C1AF2FB7100EC53D2 /* ELClass.h in Headers */,
-				182AD6871AF2FB2800EC53D2 /* ELScheduleTask.h in Headers */,
-				182AD68F1AF2FB2800EC53D2 /* ELUserInfo.h in Headers */,
-				182AD67F1AF2FB2800EC53D2 /* ELSimpleTask.h in Headers */,
-				182AD6931AF2FB2800EC53D2 /* ELFieldValue.h in Headers */,
-				182AD6AE1AF301A800EC53D2 /* WsqMD5Util.h in Headers */,
-				182AD6571AF2FA7500EC53D2 /* ElApiService.h in Headers */,
-				182AD67D1AF2FB2800EC53D2 /* ELScenario.h in Headers */,
-				8476D46E1B2967C2009A2621 /* ELClassField.h in Headers */,
-				8476D46A1B296658009A2621 /* ELClassObject.h in Headers */,
-				182AD68D1AF2FB2800EC53D2 /* ELAlertAddress.h in Headers */,
-				182AD63D1AF2F90F00EC53D2 /* ELNetworkService.h in Headers */,
-				182AD6A11AF2FBC000EC53D2 /* ELShareContext.h in Headers */,
-				182AD65B1AF2FAB100EC53D2 /* GDataDefines.h in Headers */,
-				182AD65D1AF2FAB100EC53D2 /* GDataXMLNode.h in Headers */,
+				84444F7E1B549B2C00600337 /* ElApiService.h in Headers */,
+				84444F7F1B549B2C00600337 /* ELNetworkService.h in Headers */,
+				84444F7D1B549B2000600337 /* ELClassField.h in Headers */,
+				84444F761B549B1800600337 /* ELAlertEvent.h in Headers */,
+				84444F771B549B1800600337 /* ELAlertAddress.h in Headers */,
+				84444F781B549B1800600337 /* ELUserInfo.h in Headers */,
+				84444F791B549B1800600337 /* ELDeviceInfo.h in Headers */,
+				84444F7A1B549B1800600337 /* ELFieldValue.h in Headers */,
+				84444F7B1B549B1800600337 /* ELPacketData.h in Headers */,
+				84444F7C1B549B1800600337 /* ELClassObject.h in Headers */,
+				84444F741B549B0800600337 /* ELScheduleTask.h in Headers */,
+				84444F751B549B0800600337 /* ELAlertSchedule.h in Headers */,
+				84444F6E1B549AF800600337 /* ELDeviceObject.h in Headers */,
+				84444F6F1B549AF800600337 /* ELScenario.h in Headers */,
+				84444F701B549AF800600337 /* ELSimpleTask.h in Headers */,
+				84444F711B549AF800600337 /* ELDeviceObjectHolder.h in Headers */,
+				84444F721B549AF800600337 /* ELScenarioDetail.h in Headers */,
+				84444F731B549AF800600337 /* ELAlertCondition.h in Headers */,
+				84444F6C1B549AE300600337 /* ELField.h in Headers */,
+				84444F6D1B549AE300600337 /* ELErrorCode.h in Headers */,
+				84444F6B1B549ADC00600337 /* ELClass.h in Headers */,
+				84444F691B549AD600600337 /* WsqMD5Util.h in Headers */,
+				84444F6A1B549AD600600337 /* Util.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +432,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "FMK_NAME=${PROJECT_NAME}\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\n\nxcodebuild -configuration  Release -target \"${FMK_NAME}\" -sdk iphoneos -arch armv7 -arch armv7s -arch arm64 clean build\n\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\nmkdir -p \"${INSTALL_DIR}\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\"   -output \"${INSTALL_DIR}/${FMK_NAME}\"\nopen \"${INSTALL_DIR}\"\n\n/*\n //xcodebuild -configuration Release -target \"${FMK_NAME}\" -sdk iphonesimulator -arch i386 -arch x86_64 clean build\n \"${SIMULATOR_DIR}/${FMK_NAME}\"\n \n */\n";
+			shellScript = "# Sets the target folders and the final framework product.\n# 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME\n# 例如: FMK_NAME = \"MyFramework\"\nFMK_NAME=${PROJECT_NAME}\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\n\nxcodebuild -configuration Release -target \"${FMK_NAME}\" -sdk iphonesimulator\n    -arch i386 -arch x86_64 clean build\nxcodebuild -configuration  Release -target \"${FMK_NAME}\" -sdk iphoneos\n    -arch arm64 -arch armv7 -arch armv7s clean build\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\nmkdir -p \"${INSTALL_DIR}\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\n\n\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\"  \"${SIMULATOR_DIR}/${FMK_NAME}\"  -output \"${INSTALL_DIR}/${FMK_NAME}\"\nrm -r \"${WRK_DIR}\"\nopen \"${INSTALL_DIR}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -479,6 +481,11 @@
 			target = 182AD6361AF2F90F00EC53D2 /* ELNetworkService */;
 			targetProxy = 182AD6441AF2F90F00EC53D2 /* PBXContainerItemProxy */;
 		};
+		84444F561B54988400600337 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 182AD6361AF2F90F00EC53D2 /* ELNetworkService */;
+			targetProxy = 84444F551B54988400600337 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -519,7 +526,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -560,7 +567,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -573,6 +580,7 @@
 		182AD64E1AF2F90F00EC53D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -585,21 +593,24 @@
 				);
 				INFOPLIST_FILE = ELNetworkService/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_NO_PIE = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = mh_dylib;
+				MACH_O_TYPE = staticlib;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
-				VALID_ARCHS = "armv7s armv7 arm64";
+				VALID_ARCHS = "armv7s armv7 arm64 i386 x86_64";
 			};
 			name = Debug;
 		};
 		182AD64F1AF2F90F00EC53D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -612,15 +623,17 @@
 				);
 				INFOPLIST_FILE = ELNetworkService/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_NO_PIE = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = mh_dylib;
+				MACH_O_TYPE = staticlib;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
-				VALID_ARCHS = "armv7s armv7 arm64";
+				VALID_ARCHS = "armv7s armv7 arm64 i386 x86_64";
 			};
 			name = Release;
 		};
@@ -657,16 +670,20 @@
 		84C14AF51AF6FFD800B11B46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ONLY_ACTIVE_ARCH = NO;
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
 		84C14AF61AF6FFD800B11B46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACH_O_TYPE = staticlib;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

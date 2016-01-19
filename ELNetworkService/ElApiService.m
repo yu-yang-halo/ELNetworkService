@@ -39,6 +39,8 @@
 -(GDataXMLElement *)getRootElementByData:(NSData *)data;
 #pragma mark 获取系统登录权限
 -(void)sysLogin:(NSString *)name andPassword:(NSString *)password withYN:(BOOL)logoutYN;
+-(void)sysLoginNOUser:(NSString *)name andPassword:(NSString *)password withYN:(BOOL)logoutYN;
+
 #pragma mark 网络错误汇报
 -(void)notificationErrorCode:(NSString *)errorCode;
 
@@ -219,7 +221,7 @@ static NSInteger _platform=HYLPLATFORM_DEVELOPER;
 
 #pragma mark create user
 -(BOOL)createUser:(NSString *)userName password:(NSString *)_pass email:(NSString *)_email{
-    [self sysLogin:@"elhome" andPassword:@"elhome" withYN:NO];
+    [self sysLoginNOUser:@"elhome" andPassword:@"elhome" withYN:NO];
     
     NSString *userId=[[NSUserDefaults standardUserDefaults] objectForKey:KEY_ADMIN_USERID];
     NSString *secToken=[[NSUserDefaults standardUserDefaults] objectForKey:KEY_ADMIN_SECTOKEN];
@@ -1381,6 +1383,29 @@ static NSInteger _platform=HYLPLATFORM_DEVELOPER;
             [self notificationErrorCode:errorMsg];
         }
 
+        
+    }
+}
+-(void)sysLoginNOUser:(NSString *)name andPassword:(NSString *)password withYN:(BOOL)logoutYN{
+    NSString* service=[NSString stringWithFormat:@"%@sysLogin?name=%@&password=%@&logoutYN=%d",self.connect_header,name,password,logoutYN];
+    NSLog(@"sysLogin URL: %@",service);
+    NSData *data=[self requestURLSync:service];
+    if(data){
+        GDataXMLElement *rootElement=[self getRootElementByData:data];
+        NSString* errorCodeVal=[[[rootElement elementsForName:@"errorCode"] objectAtIndex:0] stringValue];
+        NSString* errorMsg=[[[rootElement elementsForName:@"errorMsg"] objectAtIndex:0] stringValue];
+        NSString* userIdVal=[[[rootElement elementsForName:@"userId"] objectAtIndex:0] stringValue];
+        NSString* secTokenVal=[[[rootElement elementsForName:@"secToken"] objectAtIndex:0] stringValue];
+        NSString* appIdVal=[[[rootElement elementsForName:@"appId"] objectAtIndex:0] stringValue];
+        NSLog(@"sys login:: errorCode:%@, userId:%@ ,secToken:%@ ,appId:%@ ",errorCodeVal,userIdVal,secTokenVal,appIdVal);
+        if([errorCodeVal isEqualToString:@"0"]){
+            [[NSUserDefaults standardUserDefaults] setObject:userIdVal forKey:KEY_ADMIN_USERID];
+            [[NSUserDefaults standardUserDefaults] setObject:secTokenVal forKey:KEY_ADMIN_SECTOKEN];
+            [[NSUserDefaults standardUserDefaults] setObject:appIdVal forKey:KEY_ADMIN_APPID];
+        }else{
+            [self notificationErrorCode:errorMsg];
+        }
+        
         
     }
 }
