@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ELNetworkServiceTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>frameworkAggregate.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +33,26 @@
 			<true/>
 		</dict>
 		<key>84C14AF41AF6FFD800B11B46</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84CCFB1F1C5B4C3F00F42003</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84CCFB2A1C5B4E1B00F42003</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84CCFB351C5B4F7100F42003</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84CCFB4D1C5B4F7100F42003</key>
 		<dict>
 			<key>primary</key>
 			<true/>

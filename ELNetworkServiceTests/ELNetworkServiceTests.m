@@ -6,7 +6,6 @@
 //  Copyright (c) 2015年 LZTech. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "ElApiService.h"
 @interface ELNetworkServiceTests : XCTestCase
@@ -18,6 +17,7 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    [[ElApiService shareElApiService] getObjectValue:469];
     
 }
 

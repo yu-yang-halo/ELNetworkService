@@ -11,3 +11,9 @@
 @implementation ELDeviceObject
 
 @end
+
+
+
+@implementation ELTagInfo
+
+@end

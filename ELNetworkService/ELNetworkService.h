@@ -26,6 +26,7 @@ FOUNDATION_EXPORT const unsigned char ELNetworkServiceVersionString[];
 #import <ELNetworkService/ELClass.h>
 #import <ELNetworkService/ELClassField.h>
 #import <ELNetworkService/ELClassObject.h>
+#import <ELNetworkService/ELCcsClientInfo.h>
 #import <ELNetworkService/ELDeviceInfo.h>
 #import <ELNetworkService/ELDeviceObject.h>
 #import <ELNetworkService/ELDeviceObjectHolder.h>

@@ -26,5 +26,12 @@
 @property(nonatomic,retain) NSString *name;
 @property(nonatomic,retain) NSString *clientSn;
 @property(nonatomic,retain) NSDictionary *fieldMap;
+@property(nonatomic,retain) NSArray  *tags;
+
+@end
+@interface ELTagInfo:NSObject
+
+@property(nonatomic,assign) NSUInteger setTagId;
+@property(nonatomic,retain) NSString   *tag;
 
 @end

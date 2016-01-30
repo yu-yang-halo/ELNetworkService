@@ -7,16 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#define ELSERVICE_URL @"42.121.126.156"
-#define DEVELOPER_URL @"121.199.40.249"
-#define TEST_URL      @"192.168.2.111"
-
-//E联易家   42.121.126.156  api.elnet.cn
-//开发平台  121.199.40.249  api2.elnet.cn
-#define ELSERVICE_PORT 8080
+const static NSString   *webServiceIP=@"121.41.15.186";
+const static NSUInteger  webServicePOST=8080;
 #define KEY_LOGINNAME @"elian_loginname_key"
 #define KEY_PASSWORD  @"elian_loginpass_key"
-#define DEMO_ACCOUNT_NAME @"hyldemo"
+
 #define SHORT_MESSAGE_TYPE_VCODE 0
 #define SHORT_MESSAGE_TYPE_PASS 1
 //错误处理
@@ -34,12 +29,8 @@ extern NSString *kErrorAlertNotification;
 @class ELUserInfo;
 @class ELClassField;
 @class ELClassObject;
-
-typedef NS_ENUM(NSInteger, HYLPLATFORM){
-   HYLPLATFORM_ELHOME,
-   HYLPLATFORM_DEVELOPER,//可自由切换服务器地址
-   HYLPLATFORM_TEST,
-};
+@class ELCcsClientInfo;
+@class GDataXMLElement;
 
 static ElApiService* shareService=nil;
 @interface ElApiService : NSObject{
@@ -47,91 +38,51 @@ static ElApiService* shareService=nil;
 }
 
 @property(nonatomic,retain) NSString *connect_header;
-
-+(NSString *)currentIPAddress;
-+(void)setCurrentIPAddress:(NSString *)ipaddr;
-
-
-
-+(void)setPlatformType:(HYLPLATFORM) platform;
+@property(nonatomic,retain) NSString *sysApiUrl;
 
 +(ElApiService *) shareElApiService;
-#pragma mark appUserLogin
--(BOOL)loginByUsername:(NSString *)username andPassword:(NSString *)password;
 
-#pragma getObjectListAndFieldsByUser
--(NSDictionary *)getObjectListAndFieldsByUser;
-
-#pragma mark --getFieldValue
--(NSString *)getFieldValue:(NSInteger)fieldId withDevice:(NSInteger)objectId;
-
-#pragma mark setFieldValue
--(BOOL)setFieldValue:(NSString *)fieldValue forFieldId:(NSInteger)fieldId toDevice:(NSInteger)objectId withYN:(BOOL)sendToDeviceYN;
-
-#pragma mark task
--(BOOL)activateTask:(NSInteger)taskId withYN:(BOOL)activeYN;
--(NSArray *)getTaskListByObject:(NSInteger)objectId;
--(BOOL)updateTask:(ELScheduleTask *)task;
--(BOOL)createTask:(ELScheduleTask *)task;
--(BOOL)deleteTask:(NSInteger)taskId;
+/*
+ **********************************
+ *
+ *  E联webservice 最新版本的接口
+ **********************************
+ */
+-(ELUserInfo *)findUserInfo:(NSString *)loginName withEmail:(NSString *)email;
+-(BOOL)updateUser:(NSString *)password email:(NSString *)email number:(NSString *)phoneNumber;
+#pragma api appUserLogin
+-(BOOL)loginByUsername:(NSString *)username andPassword:(NSString *)password appId:(int)appId;
+#pragma  getObjectList
+-(NSMutableDictionary *)getObjectList;
 #pragma mark getObjectValue
 -(ELDeviceObject *)getObjectValue:(NSInteger)objectId;
 -(BOOL)updateObject:(ELDeviceObject *)deviceObject;
-
-#pragma mark executeScenario  getScenarioListByUser de
--(BOOL)executeScenario:(NSInteger)scenarioId;
--(BOOL)deleteScenario:(NSInteger)scenarioId;
--(NSInteger)createScenario:(NSString *)name withImageId:(NSInteger)imageId;
--(BOOL)addTaskToScenario:(NSInteger)scenarioId withTask:(ELSimpleTask *)task;
--(ELScenarioDetail *)getScenarioDetail:(NSInteger)scenarioId;
--(NSArray *)getScenarioListByUser;
-#pragma mark alert
--(ELAlertCondition *)getAlertByObjectId:(NSInteger)objectId;
--(BOOL)setAlertMode:(NSInteger) objectId withMode:(NSInteger)mode;
--(NSInteger)getAlertMode:(NSInteger)objectId;
--(NSArray *)getAlertEventListByDevice:(NSInteger)objectId withMax:(NSInteger)maxNum;
--(NSArray *)getAlertAddressList:(NSInteger)alertId;
--(NSArray *)getAlertSchedule:(NSInteger)alertId;
--(BOOL)addAlertAddress:(ELAlertAddress *)alertAddress;
--(BOOL)deleteAlertAddress:(NSInteger)alertId withType:(NSInteger)addressType;
--(BOOL)addAlertSchedule:(ELAlertSchedule *)alertSchedule;
--(BOOL)deleteAlertSchedule:(NSInteger)alertId;
-
-#pragma mark phone register
--(NSString *)getShortMsgCodeByUser:(NSString *)userName;
--(BOOL)sendShortMsgCodeByUser:(NSString *)userName withType:(NSInteger)type;
--(BOOL)createUser:(NSString *)userName password:(NSString *)_pass email:(NSString *)_email;
--(BOOL)sendEmailShortMsg:(NSString *)address withType:(NSInteger)addressType andText:(NSString *)text;
-
-#pragma mark getLocationList
--(NSArray *)getLocationList;
-#pragma mark getObjectListByClass
--(NSArray *)getObjectListByClass:(NSInteger)classId;
-
-#pragma mark user info
--(ELUserInfo *)findUserInfo:(NSString *)loginName;
--(ELUserInfo *)findUserInfo:(NSString *)loginName withEmail:(NSString *)email;
--(BOOL)updateUser:(ELUserInfo *)userInfo;
--(BOOL)updateUserPass:(NSString *)password byLoginName:(NSString *)loginName;
-
-#pragma mark device manager
--(NSInteger)createObject:(ELDeviceObject *)devObj;
+#pragma mark 默认参数accessYN=false connType=0
+-(NSInteger)createObject:(int)classId name:(NSString *)name ccsClientSn:(NSString *)ccsClientSn clientId:(int)ccsClientId;
+#pragma mark getCcsDeviceBySn
+-(ELCcsClientInfo *)getCcsDeviceBySn:(NSString *)ccsClientSn;
+#pragma mark addTagToDevObject
+-(BOOL)addTagToDevObject:(int)objectId tagSetId:(int)tagSetId tag:(NSString *)tag;
 -(BOOL)deleteObject:(NSInteger)objectId;
+#pragma mark setFieldValue
+-(BOOL)setFieldValue:(NSString *)fieldValue forFieldId:(NSInteger)fieldId toDevice:(NSInteger)objectId withYN:(BOOL)sendToDeviceYN;
+#pragma mark --getFieldValue
+-(NSString *)getFieldValue:(NSInteger)fieldId withDevice:(NSInteger)objectId;
 
--(NSArray *)getGatewayListByIP:(NSString *)ipAddress;
--(NSArray *)getChildDevicesByGW:(NSInteger)gwClientId;
--(BOOL)createAlert:(ELAlertCondition *)alert toDevice:(NSInteger)objectId;
+#pragma mark create user elsysapi 提供
+-(BOOL)createUser:(NSString *)userName password:(NSString *)_pass email:(NSString *)_email phoneNumber:(NSString *)phnumber appId:(int)appId;
 
+
+#pragma mark sendShortMsgCodeByUser  type 0用户注册的验证码 1随机密码 （有问题暂时无法使用）
+-(BOOL)sendShortMsgCodeByUser:(NSString *)userName type:(int)type;
+#pragma mark getShortMsgCodeByUser（有问题暂时无法使用）
+-(NSString *)getShortMsgCodeByUser:(NSString *)userName;
+#pragma mark sendEmailShortMsg（有问题暂时无法使用） addressType  1:shormessage
+-(BOOL)sendEmailShortMsg:(NSString *)address withType:(NSInteger)addressType andText:(NSString *)text;
+-(NSArray *)getAlertEventListByDevice:(NSInteger)objectId withMax:(NSInteger)maxNum;
 -(NSArray *)getShotImgNameList:(NSInteger)objectId withMaxNum:(NSInteger)maxNum;
-#pragma mark image stream to base64String
 -(NSString *)getShotImgByName:(NSInteger)objectId withName:(NSString *)name;
-
-
-
-@end
-
-@interface ElApiService (ClassData)
-
--(ELClassObject *)getClassById:(NSInteger)classId;
+-(ELDeviceObject *)parseXmlToDeviceObject:(GDataXMLElement *)element;
 
 @end
+
