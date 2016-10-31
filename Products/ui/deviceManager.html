@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="language/language.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="js/elapi.js"></script>
+		<link rel="stylesheet" href="css/theme.css" type="text/css" charset="utf-8" />
+	
+	<style>
+		body{
+			    width: 100%;
+				height: 100%;
+				margin: 0px auto;   
+		}
+		.main{
+			    width: 100%;
+				height: 100%;
+				margin: 0px auto;  
+				text-align: center;
+		}
+		button{
+			height: 40px;
+			width: 240px;
+			margin-top: 20px;
+		}
+	</style>
+	</head>
+	<body>
+		<div class="main">
+			<div>
+				<button class="button gray" id="btn_deviceReg">设备注册</button>
+			</div>
+			<div>
+				<button class="button gray" id="btn_deviceDel">设备删除</button>
+			</div>
+			<div>
+			<button class="button gray" id="btn_wifiConfig">WIFI设置</button>
+			</div>
+
+		</div>
+	</body>
+	<script type="text/javascript">
+	    $("#btn_deviceReg").click(function(){
+                hyl_toDeviceRegisterPage();
+	    });
+	    $("#btn_wifiConfig").click(function(){
+                hyl_toWiFiConfigPage();
+	    });
+	    $("#btn_deviceDel").click(function(){
+              hyl_toDeviceDelPage();
+	    });
+	</script>
+</html>

@@ -16,6 +16,7 @@ const static NSUInteger  webServicePOST=8080;
 #define SHORT_MESSAGE_TYPE_PASS 1
 //错误处理
 extern NSString *kErrorCodeKey;
+extern NSString *kErrorCodeMsgKey;
 extern NSString *kErrorAlertNotification;
 
 @class ElApiService;
@@ -74,7 +75,7 @@ static ElApiService* shareService=nil;
 
 
 #pragma mark sendShortMsgCodeByUser  type 0用户注册的验证码 1随机密码 （有问题暂时无法使用）
--(BOOL)sendShortMsgCodeByUser:(NSString *)userName type:(int)type;
+-(BOOL)sendShortMsgCodeByUser:(NSString *)userName type:(int)type appId:(int)appId;
 #pragma mark getShortMsgCodeByUser（有问题暂时无法使用）
 -(NSString *)getShortMsgCodeByUser:(NSString *)userName;
 #pragma mark sendEmailShortMsg（有问题暂时无法使用） addressType  1:shormessage

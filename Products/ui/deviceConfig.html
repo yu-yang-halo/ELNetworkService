@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no" />
+	<!--
+    	作者：623240480@qq.com
+   
+    -->
+        <script type="text/javascript" src="js/elapi.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<title>设备列表</title>
+		<link rel="stylesheet" href="css/theme.css" type="text/css" charset="utf-8" />
+		<link rel="stylesheet" href="css/deviceConfig.css" type="text/css" charset="utf-8" />
+		<title></title>
+	<style>
+
+            .tagcls option{
+            color: #f000ff;
+            }
+        label{
+           text-align:right;
+        }
+
+		</style>
+	</head>
+
+	<body>
+
+		<div class="appTheme">
+			<div class="page2">
+				<div class="title">
+					<span><label>基本信息配置</label><span>
+                </div>
+                <div class="configBody">
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+    </body>
+    <script type="text/javascript">
+        /*
+ "Tags": [
+      {
+        "tagSetId": "16",
+        "name": "位置",
+        "tag": ["Bedroom", "Kitchen", "Front Door"]
+      }, {
+        "tagSetId": "17",
+        "name": "部门",
+        "tag": ["Sales", "Maketing", "Development"]
+      }
+    ]
+         
+         */
+      
+       function init(appJSON){
+            var tagArrs=[];
+            if(appJSON.localTagsTracker==true){
+                tagArrs=appJSON.localTags
+            }
+
+            var dataElementString=loadHtmlDatas(tagArrs);
+            $(".configBody").empty();
+            $(".configBody").append(dataElementString);
+       }
+
+      
+       function loadHtmlDatas(tagArrs){
+      
+              var htmlData="";
+              htmlData+="<div class='configRow'><label>名称</label><input  id='name' value=''></input> </div>";
+              htmlData+=" <div class='configRow'><label>序列号</label><input id='sn' value='' disabled='disabled'></input> </div>";
+              htmlData+=loadTags(initDefaultTag(tagArrs));
+              htmlData+="<div class='configRow'><button class='button gray' onclick='save()'>保存</button></div>";
+              return htmlData;
+       }
+
+       function initDefaultTag(tagArrs){
+
+          for(var i=0;i<tagArrs.length;i++){
+              var tags=tagArrs[i].localTag;
+              var newTagArr=[];
+              newTagArr.push("未选择");
+              for(var j=0;j<tags.length;j++){
+                 newTagArr.push(tags[j]);
+              }
+              tagArrs[i].localTag=newTagArr;
+
+          }
+          return tagArrs;
+       }
+
+        
+        function loadTags(tagArrs){
+        	var tagElements="";
+
+        	for(var i=0;i<tagArrs.length;i++){
+        		  tagElements+="<div class='configRow'>  " ;
+        		  tagElements+="<label>"+tagArrs[i].localName+"</label>";
+        		  tagElements+="<select  class='tagcls' tagSetId='"+tagArrs[i].localTagSetId+"'>";
+        		  var tags=tagArrs[i].localTag;
+        		  for(var j=0;j<tags.length;j++){
+        		  	   tagElements+="<option>"+  tags[j]+"</option>";
+        		  }
+        	      tagElements+="</select> </div>";
+        	}
+        	return tagElements;
+        }
+
+        function initNameAndSn(name,sn,tags){
+            $("#name").val(name);
+            $("#sn").val(sn);
+
+            if(tags.constructor==Array){
+             //tags=[{"setTagId":"位置","tag":"走廊"},{"setTagId":"办公室","tag":"会议室"}];
+            $(".tagcls").each(function(){
+
+            	for(var i=0;i<tags.length;i++){
+            		if($(this).attr("tagSetId")==tags[i].setTagId){
+            			$(this).val(tags[i].tag);
+            		}
+
+            	}
+
+            });
+            }
+
+        }
+        function save(){
+        	  var name=$("#name").val();
+        	  var sn=$("#sn").val();
+        	  	
+        	  var size=$(".tagcls").size();
+        	  var i=0;
+        	  var tagArrString="";
+              $(".tagcls").each(function(){
+              	 i++;
+                 tagArrString+=$(this).attr("tagSetId")+":"+$(this).val();
+
+           	     if(i!=size){
+           	    	tagArrString+=",";
+           	     }
+
+              });
+              hyl_updateDeviceInfo(name,sn,tagArrString);
+
+         }
+
+    
+    </script>
+</html>

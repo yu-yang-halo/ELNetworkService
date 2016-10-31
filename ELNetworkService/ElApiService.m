@@ -38,7 +38,7 @@
 -(GDataXMLElement *)getRootElementByData:(NSData *)data;
 
 #pragma mark 网络错误汇报
--(void)notificationErrorCode:(NSString *)errorCode;
+-(void)notificationErrorCode:(NSString *)errorCode errMsg:(NSString *)errMsg;
 
 @end
 
@@ -98,7 +98,7 @@
             return userInfo;
             
         }else{
-            [self notificationErrorCode:errorMsg];
+            [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return nil;
@@ -133,7 +133,7 @@
         if([errorCodeVal isEqualToString:@"0"]){
             return YES;
         }else{
-            [self notificationErrorCode:errorMsg];
+             [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return NO;
@@ -161,7 +161,7 @@
             
             return YES;
         }else{
-            [self notificationErrorCode:errorMsg];
+             [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return NO;
@@ -253,7 +253,7 @@
                 
             }
         }else{
-            [self notificationErrorCode:errorMsg];
+            [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     //缓存到本地
@@ -279,7 +279,7 @@
             
             return deviceObject;
         }else{
-            [self notificationErrorCode:errorMsg];
+             [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return nil;
@@ -307,7 +307,7 @@
         if([errorCodeVal isEqualToString:@"0"]){
             return YES;
         }else{
-            [self notificationErrorCode:errorMsg];
+            [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return NO;
@@ -326,7 +326,7 @@
         if([errorCodeVal isEqualToString:@"0"]){
             return [[[[rootElement elementsForName:@"objectId"] objectAtIndex:0] stringValue] integerValue];
         }else{
-            [self notificationErrorCode:errorMsg];
+             [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return -1;
@@ -349,7 +349,7 @@
         [elccsClientInfo setUseFlag:[useFlag boolValue]];
         [elccsClientInfo setAccessYN:[accessYN boolValue]];
         [elccsClientInfo setTypeCode:[typeCode integerValue]];
-        [elccsClientInfo setClassId:[clientId integerValue]];
+        [elccsClientInfo setClassId:[classId integerValue]];
         return elccsClientInfo;
     }else{
         return nil;
@@ -372,7 +372,7 @@
             ELCcsClientInfo *elccsClientInfo=[self parseCcsClientInfoNode:deviceInfoNode];
             return elccsClientInfo;
         }else{
-            [self notificationErrorCode:errorMsg];
+             [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return nil;
@@ -392,7 +392,7 @@
         if([errorCodeVal isEqualToString:@"0"]){
              return YES;
         }else{
-            [self notificationErrorCode:errorMsg];
+             [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return NO;
@@ -411,7 +411,7 @@
         if([errorCodeVal isEqualToString:@"0"]){
             return YES;
         }else{
-            [self notificationErrorCode:errorMsg];
+             [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return NO;
@@ -431,7 +431,7 @@
         if([errorCodeVal isEqualToString:@"0"]){
             return YES;
         }else{
-            [self notificationErrorCode:errorMsg];
+            [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return NO;
@@ -452,16 +452,25 @@
         if([errorCodeVal isEqualToString:@"0"]){
             return [[[rootElement elementsForName:@"value"] objectAtIndex:0] stringValue];
         }else{
-            [self notificationErrorCode:errorMsg];
+             [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return nil;
 }
 #pragma mark sendShortMsgCodeByUser  type 0用户注册的验证码 1随机密码 （有问题暂时无法使用）
--(BOOL)sendShortMsgCodeByUser:(NSString *)userName type:(int)type{
+-(BOOL)sendShortMsgCodeByUser:(NSString *)userName type:(int)type appId:(int)appId{
     NSString *userId=[[NSUserDefaults standardUserDefaults] objectForKey:KEY_USERID];
     NSString *secToken=[[NSUserDefaults standardUserDefaults] objectForKey:KEY_SECTOKEN];
-    NSString* service=[NSString stringWithFormat:@"%@sendShortMsgCodeByUser?senderId=%@&secToken=%@&userName=%@&type=%d",self.connect_header,userId,secToken,userName,type];
+    
+    NSString* appendS=@"";
+    if(appId>0){
+        appendS=[NSString stringWithFormat:@"&appId=%d",appId];
+    }
+    
+    NSString* service=[NSString stringWithFormat:@"%@sendShortMsgCodeByUser?senderId=%@&secToken=%@&userName=%@&type=%d%@",self.connect_header,userId,secToken,userName,type,appendS];
+    
+    
+    
     
     NSLog(@"sendShortMsgCodeByUser URL: %@",service);
     NSData *data=[self requestURLSync:service];
@@ -472,7 +481,7 @@
         if([errorCodeVal isEqualToString:@"0"]){
             return YES;
         }else{
-            [self notificationErrorCode:errorMsg];
+            [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return NO;
@@ -491,7 +500,7 @@
         if([errorCodeVal isEqualToString:@"0"]){
             return [[[rootElement elementsForName:@"shortMsgCode"] objectAtIndex:0] stringValue];
         }else{
-            [self notificationErrorCode:errorMsg];
+             [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return nil;
@@ -513,7 +522,7 @@
         if([errorCodeVal isEqualToString:@"0"]){
             return YES;
         }else{
-            [self notificationErrorCode:errorMsg];
+             [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return NO;
@@ -547,7 +556,7 @@
             }
             
         }else{
-            [self notificationErrorCode:errorMsg];
+             [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     
@@ -579,7 +588,7 @@
             
             return imageNameList;
         }else{
-            [self notificationErrorCode:errorMsg];
+            [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return nil;
@@ -599,7 +608,7 @@
             return [[[rootElement elementsForName:@"base64String"] objectAtIndex:0] stringValue];
             
         }else{
-            [self notificationErrorCode:errorMsg];
+             [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return nil;
@@ -619,7 +628,7 @@
         if([errorCodeVal isEqualToString:@"0"]){
             return YES;
         }else{
-            [self notificationErrorCode:errorMsg];
+            [self notificationErrorCode:errorCodeVal errMsg:errorMsg];
         }
     }
     return NO;
@@ -638,11 +647,13 @@
 
 #pragma private
 NSString *kErrorCodeKey=@"key_error_code";
+NSString *kErrorCodeMsgKey=@"key_error_code_msg";
 NSString *kErrorAlertNotification=@"key_error_notifiaction";
--(void)notificationErrorCode:(NSString *)errorCode{
+-(void)notificationErrorCode:(NSString *)errorCode errMsg:(NSString *)errMsg{
     dispatch_async(dispatch_get_main_queue(), ^{
         if(errorCode!=nil){
-            NSDictionary *infoDic=[NSDictionary dictionaryWithObject:errorCode forKey:kErrorCodeKey];
+            NSDictionary *infoDic=[NSDictionary dictionaryWithObjectsAndKeys:errorCode,kErrorCodeKey,errMsg,kErrorCodeMsgKey,nil];
+            
             [[NSNotificationCenter defaultCenter] postNotificationName:kErrorAlertNotification object:nil userInfo:infoDic];
         }
       
@@ -669,7 +680,7 @@ NSString *kErrorAlertNotification=@"key_error_notifiaction";
         errorDescription=error.localizedDescription;
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            [self notificationErrorCode:errorDescription];
+            [self notificationErrorCode:@"-1" errMsg:errorDescription];
             
         });
     }

@@ -1,0 +1,502 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no" />
+	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="js/elapi.js"></script>
+	<script type="text/javascript" src="js/map.js"></script>
+	<title>设备列表</title>
+	<link rel="stylesheet" href="css/theme.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/nav.css" type="text/css" charset="utf-8" />
+	<style type="text/css">
+		html,
+		body {
+		height: 100%;
+		margin: 0px auto;
+		}
+
+		#container {
+		width: 100%;
+		height: 100%;
+		margin: 0px auto;
+		position: relative;
+		}
+
+
+
+		.row {
+		text-align: center;
+		height: 60px;
+		display: table;
+		width: 100%;
+		margin: auto;
+		}
+
+		span {
+		display: table-cell;
+		vertical-align: middle;
+		margin-top: 5px;
+		}
+
+		.in {
+		background-repeat: round;
+		margin-left: 5px;
+		padding-left: 2px;
+		height: 30px;
+		width: 180px;
+		font-size: 20px;
+		background-size: 100%;
+		}
+		.lbname{
+		display: inline-block;
+		text-align:right;
+		width:20%;
+        vertical-align: middle;
+		}
+
+		.radiobtn {
+		width: 60px;
+		height: 60px;
+		outline:none;
+		margin: 2px;
+		border:0 none;
+		vertical-align:middle;
+		}
+
+		td{
+		width:160px;
+		border-width:3px;
+		border-style:dashed;
+		}
+
+		@keyframes fade-in {
+		0% {
+		opacity: 0;
+		}
+		/*初始状态 透明度为0*/
+		40% {
+		opacity: 0.5;
+		}
+		/*过渡状态 透明度为0*/
+		100% {
+		opacity: 1;
+		}
+		/*结束状态 透明度为1*/
+		}
+
+		@-webkit-keyframes fade-in {
+		/*针对webkit内核*/
+		0% {
+		opacity: 0;
+		}
+		40% {
+		opacity: 0.5;
+		}
+		100% {
+		opacity: 1;
+		}
+		}
+
+		.page {
+		animation: fade-in;
+		/*动画名称*/
+		animation-duration: 0.9s;
+		/*动画持续时间*/
+		-webkit-animation: fade-in 0.9s;
+		/*针对webkit内核*/
+		}
+
+		table {
+		width: 100%;
+		border-collapse: collapse;
+		border: solid gray;
+		border-width: 1px 0px 0px 1px;
+		}
+
+		tr {
+		height: 40px;
+		border-bottom-color: #333333;
+		}
+
+		td {
+		border: solid gray;
+		border-width: 0px 1px 1px 0px;
+		padding: 10px 0px;
+		color: #333333;
+		font-size: 15px;
+		}
+
+		th {
+		border: solid gray;
+		border-width: 0px 1px 1px 0px;
+		padding: 10px 0px;
+		color: #333333;
+		font-size: 18px;
+		}
+
+		.button {
+		margin: 2px;
+		font-size: 15px
+		}
+
+		img {
+		width: 70px;
+		height: 70px;
+		margin-top: 10px;
+        vertical-align: middle;
+		}
+	</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<div id="container">
+
+</div>
+
+</body>
+<script type="text/javascript">
+		var imagePairs = new Map();
+		var objectId=0;
+     
+		function initDomcument() {
+			var len = $("#container").children().length;
+			var currentIndex = 0;
+			loadNav(len, currentIndex);
+
+			function moveLeft() {
+				if (++currentIndex >= len) {
+					currentIndex = len - 1;
+				}
+				loadNav(len, currentIndex);
+				for (var i = 0; i < len; i++) {
+					if (i == currentIndex) {
+						$("#page" + (i + 1)).show();
+					} else {
+						$("#page" + (i + 1)).hide();
+					}
+				}
+			}
+
+			function moveRight() {
+				if (--currentIndex < 0) {
+					currentIndex = 0;
+				}
+				loadNav(len, currentIndex);
+				for (var i = 0; i < len; i++) {
+					if (i == currentIndex) {
+						$("#page" + (i + 1)).show();
+					} else {
+						$("#page" + (i + 1)).hide();
+					}
+				}
+			}
+			addTouchEvent(document.getElementById("container"), moveLeft, moveRight);
+		}
+
+
+
+  function getFieldValue(fieldId,dev){
+  	 var fieldValue="";
+  	 var fieldMap=dev.fieldMap;
+  	 if(fieldMap!=undefined&&fieldMap[fieldId]!=undefined){
+  	 	fieldValue=fieldMap[fieldId];
+  	 }
+  	 return fieldValue;
+  }
+
+
+		function loadData(root, devJSON) {
+		     objectId=devJSON.objectId;
+
+			/*
+			 * 该类型设备UI描述页数
+			 */
+			//判断是否有classLayout数据
+			if (root.localClassLayoutTracker == true) {
+				var jsonClsLayout = root.localClassLayout;
+				var clslayout = [];
+				if (jsonClsLayout.constructor == Array) {
+					clslayout = jsonClsLayout;
+				} else {
+					clslayout.push(jsonClsLayout);
+				}
+				var currentClassLayout;
+				for (var q = 0; q < clslayout.length; q++) {
+					if (clslayout[q].localClassId == devJSON.classId) {
+						currentClassLayout = clslayout[q];
+						break;
+					}
+				}
+				$("#container").empty();
+				//判断是否存在页面数据
+				if (currentClassLayout.localPageTracker == true) {
+					var jsonPage = currentClassLayout.localPage;
+					var pages = [];
+					if (jsonPage.constructor == Array) {
+						pages = jsonPage;
+					} else {
+						pages.push(jsonPage);
+					}
+					for (var i = 0; i < pages.length; i++) {
+						var titleBar = "<div class='title'>" + pages[i].localTitle + "</div>";
+						var display_style = "display:none;";
+						/*
+						 * 首页显示，其他页隐藏
+						 */
+						if (pages[i].localNum == 1) {
+							display_style = "";
+						}
+						/*
+						 * 每页的行描述
+						 */
+						var rowselementString = "";
+						//判断是否存在行数据
+						if (pages[i].localRowTracker == true) {
+							var jsonRow = pages[i].localRow;
+							var rows = [];
+							if (jsonRow.constructor == Array) {
+								rows = jsonRow;
+							} else {
+								rows.push(jsonRow);
+							}
+							for (var j = 0; j < rows.length; j++) {
+								var currentRow = rows[j];
+								/*
+								 * 每一行可能有Button，LabelField，ImgRadioButton fvTable
+								 */
+								var rowInElementString = buildRowInElementHtmlString(devJSON,currentRow);
+
+								var rowElement = "<div class='row' style='margin-top:"+currentRow.localMargin+"px;  '>" + rowInElementString + "</div>";
+								rowselementString += rowElement;
+							}
+						}
+						var elements = " <div class='page' id='page" + pages[i].localNum + "'  style='" + display_style + ";padding:" + pages[i].localPadding + "px; '>" + titleBar + rowselementString + "</div>";
+						$("#container").append(elements);
+					}
+				}
+			}
+			initDomcument();
+			$(".st").each(function() {
+				var fieldId = $(this).attr("fieldId");
+				var imageArr=imagePairs.get(fieldId);
+				var localImage="";
+				for(var i=0;i<imageArr.length;i++){
+				  if(imageArr[i].localValue==$(this).attr("status")){
+				     localImage=imageArr[i].localImage;
+				     break;
+				  }
+				}
+
+				if(localImage==""){
+				   $(this).attr("src","img/"+imageArr[0].localImage);
+				}else{
+				   $(this).attr("src","img/"+localImage);
+				}
+
+			})
+		}
+
+		function buttonSwitch(el) {
+			//alert(el.attr("cmdFieldId")+":"+el.attr("statusFieldId"));
+			if (el.attr("value") == 0) {
+				el.attr("src", "img/"+el.attr("img1"));
+				el.attr("value", 1);
+			} else {
+				el.attr("src", "img/"+el.attr("img0"));
+				el.attr("value", 0);
+			}
+			hyl_setFieldCmd(el.attr("value"),el.attr("cmdFieldId"),objectId);
+		}
+
+		function sendCmd(el) {
+			//button type 0 1    1--命令  2--存储  3--关闭 4--取消
+			if(el.attr("type")==1){
+				  alert("发送命令类型");
+				   hyl_setFieldCmd(el.attr("fixedValue"),el.attr("fieldId"),objectId);
+			}else if(el.attr("type")==2){
+				 alert("发送存储类型");
+				 $(".in").each(function() {
+					hyl_setFieldCmd($(this).val(),$(this).attr("fieldId"),objectId);
+				 })
+			}else if(el.attr("type")==3){
+				   alert("发送关闭类型");
+			}else if(el.attr("type")==4){
+				  alert("发送取消类型");
+			}
+			
+		
+		}
+
+		/*
+		 * 设置组件标识
+		 * button              tag==1001
+		 * label               tag==1002
+		 * Image               tag==1003
+		 * imageRadioBut       tag==1004
+		 * imageStatus         tag==1005
+		 * labelField          tag==1006
+		 * fvtable             tag==1007
+		 * histtable           tag==1008
+		 */
+	    var BUTTON_TAG=1001;
+	    var LABEL_TAG=1002;
+	    var IMAGE_TAG=1003;
+	    var IMAGERADIOBUT_TAG=1004;
+	    var IMAGESTATUS_TAG=1005;
+	    var LABELFIELD_TAG=1006;
+	    var FVTABLE_TAG=1007;
+	    var HISTTABLE_TAG=1008;
+
+	    function buildRowInElementHtmlString (devJSON,currentRow){
+	           var  rowObj=collectRowComponents(currentRow);
+
+
+	    		var rowInElementString = "";
+	    		rowInElementString += "<span>";
+	    		for(var i=0;i<rowObj.length;i++){
+	    			var rowCell=rowObj[i];
+	    			if(rowCell.tag==BUTTON_TAG){
+						rowInElementString += "<button class='button gray'  fieldId='"+rowCell.localFieldId+"'  fixedValue='" + rowCell.localFixedValue + "'   type='" + rowCell.localType + "' value='" +i + "' onclick='sendCmd($(this))' >" + rowCell.localText + "</button>";
+	    			}
+	    			if(rowCell.tag==LABEL_TAG){
+						rowInElementString += "<label style='margin:30px;'>"+rowCell.localText+"</label>";
+	    			}
+	    			if(rowCell.tag==IMAGE_TAG){
+						rowInElementString += "<img src='img/" + rowCell.localImg + "'></img>";
+	    			}
+	    			if(rowCell.tag==IMAGERADIOBUT_TAG){
+	    				rowInElementString += "<input type='image' onclick='buttonSwitch($(this))'  cmdFieldId='" + rowCell.localCmdFieldId + "'   statusFieldId='" + rowCell.localStatusFieldId + "' value='0'  img1='" + rowCell.localImg1 + "'  img0='" + rowCell.localImg0 + "'  src='img/" + rowCell.localImg0 + "' class='radiobtn' />";
+	    			}
+	    			if(rowCell.tag==IMAGESTATUS_TAG){
+	    				imagePairs.put(rowCell.localFieldId + "", rowCell.localValueImagePair);
+						rowInElementString += "<img  status='"+getFieldValue(rowCell.localFieldId,devJSON)+"'  fieldId='" + rowCell.localFieldId + "' class='st'></img>";
+	    			}
+	    			if(rowCell.tag==LABELFIELD_TAG){
+	    				rowInElementString += "<span style='display:block;height: 55px;'><label class='lbname'>" + rowCell.localLabel + "</label><input class='in' value='"+getFieldValue(rowCell.localFieldId,devJSON)+"'  fieldId='" + rowCell.localFieldId + "'/></span>";
+	    			}
+
+	    			if(rowCell.tag==FVTABLE_TAG){
+							var cells = rowCell.localFVCell;
+							var cellString = "";
+							for (var p = 0; p < cells.length; p++) {
+								var cell = cells[p];
+								var value=getFieldValue(cell.localFieldId,devJSON);
+								var typeFormat=cell.localFormat;
+								cellString += "<tr><td>" + cell.localLabel+ "</td><td>" +analysisValueFormat(value,typeFormat) + "</td></tr>";
+
+							}
+							rowInElementString += "<label class='tbTitle'>"+rowCell.localName+"</label> <table class='tab'><tr><th>" + rowCell.localColname1 + "</th><th>" + rowCell.localColname2 + "</th></tr>" + cellString + "</table>";
+	    			}
+	    			if(rowCell.tag==HISTTABLE_TAG){
+							histTableEleString += "<div  style='text-align: left;color: #000000;'><label>" + rowCell.localName + "</label></div>";
+							var mrow = "<tr>";
+							for (var s = 0; s < rowCell.localColnum; s++) {
+								mrow += "<th>" + rowCell.localColnames[s] + "</th>";
+							}
+							mrow += "</tr>";
+							rowInElementString += "<table class='histable' cmd='" + rowCell.localQuery + "'>" + mrow + "</table>";
+	    			}
+	    		}
+	    		rowInElementString += "</span>";
+
+	    		return rowInElementString;
+	    }
+
+		function collectRowComponents(currentRow){
+			              var rowObject=[];
+						   if (currentRow.localElementGroupTracker == true) {
+
+									if (currentRow.localElementGroup.localButtonTracker == true) {
+										var localButton=currentRow.localElementGroup.localButton;
+										for(var i=0;i<localButton.length;i++){
+											localButton[i].tag=BUTTON_TAG;
+											rowObject.push(localButton[i]);
+										}
+									}
+									if(currentRow.localElementGroup.localLabelTracker == true){
+									    var localLabel=currentRow.localElementGroup.localLabel;
+
+										for(var i=0;i<localLabel.length;i++){
+											localLabel[i].tag=LABEL_TAG;
+											rowObject.push(localLabel[i]);
+										}
+
+									}
+									if (currentRow.localElementGroup.localImageTracker == true){
+										 var localImage=currentRow.localElementGroup.localImage;
+										 for(var i=0;i<localImage.length;i++){
+											localImage[i].tag=IMAGE_TAG;
+											rowObject.push(localImage[i]);
+										}
+
+									}
+									if (currentRow.localElementGroup.localImageRadioButTracker == true) {
+										 var localImageRadioBut=currentRow.localElementGroup.localImageRadioBut;
+										  for(var i=0;i<localImageRadioBut.length;i++){
+											localImageRadioBut[i].tag=IMAGERADIOBUT_TAG;
+											rowObject.push(localImageRadioBut[i]);
+										}
+									}
+									if (currentRow.localElementGroup.localImageStatusTracker == true) {
+										 var localImageStatus=currentRow.localElementGroup.localImageStatus;
+										  for(var i=0;i<localImageStatus.length;i++){
+											localImageStatus[i].tag=IMAGESTATUS_TAG;
+											rowObject.push(localImageStatus[i]);
+										}
+									}
+									if (currentRow.localElementGroup.localLabelFieldTracker == true){
+										 var localLabelField=currentRow.localElementGroup.localLabelField;
+										   for(var i=0;i<localLabelField.length;i++){
+											localLabelField[i].tag=LABELFIELD_TAG;
+											rowObject.push(localLabelField[i]);
+										}
+									}
+									if (currentRow.localElementGroup.localFVTableTracker == true) {
+										 var localFVTable=currentRow.localElementGroup.localFVTable;
+										  for(var i=0;i<localFVTable.length;i++){
+											localFVTable[i].tag=FVTABLE_TAG;
+											rowObject.push(localFVTable[i]);
+										}
+									}
+									if (currentRow.localElementGroup.localHistTableTracker == true){
+										 var localHistTable=currentRow.localElementGroup.localHistTable;
+										  for(var i=0;i<localHistTable.length;i++){
+											localHistTable[i].tag=HISTTABLE_TAG;
+											rowObject.push(localHistTable[i]);
+										}
+									}
+
+
+
+							}
+						   if(rowObject.length>0){
+
+						   	  for(j=1;j<rowObject.length;j++){
+
+						   	  	      for(var  i=0;i<=j-1;i++){
+						   	  	      	 if(rowObject[j].localWidgetId<rowObject[i].localWidgetId){
+
+						   	  	      	  var temp=rowObject[j];
+						   	  	      	  rowObject[j]=rowObject[i];
+						   	  	      	  rowObject[i]=temp;
+
+						   	  	          }
+						   	  	      }
+
+
+
+						   	  }
+
+
+						   }
+
+
+					return rowObject;
+	       }
+		
+	</script>
+
+</html>

@@ -1,0 +1,100 @@
+﻿body{
+	background-color: #FFFFFF;
+}
+
+label{
+	color: gray;
+}
+a{
+	color: gray;
+}
+/*
+ * Title Bar 
+ */
+.title{
+					   	 height:35px;
+					   	 width: 100%;
+					   	background: #99a9bb;
+					   	 color: #FFFFFF;
+					   	 text-align: center;
+					   	 line-height: 35px;
+					   	 font-size: 18px;
+					   }
+.title label{
+	color: white;
+	margin-left: 2px;
+	
+}		
+.tbTitle{
+	left:0;
+	float:left;
+	font-size: 24px;
+	color: black;
+	margin-top: 15px;
+}			   
+.padd{
+	padding-top: 60px;
+}
+input{
+	 border: 1px solid #999999;
+}
+/*
+ * Button 样式
+ */
+.button {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 16px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button:hover {
+	text-decoration: none;
+}
+.button:active {
+	position: relative;
+	top: 0px;
+}
+.bigrounded {
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius: 2em;
+}
+.medium {
+	font-size: 12px;
+	padding: .4em 1.5em .42em;
+}
+.small {
+	font-size: 11px;
+	padding: .2em 1em .275em;
+}
+/* gray */
+.gray {
+	color: #FFFFFF;
+	border: solid 1px #FFFFFF;
+	background: #99a9bb;
+	background: -webkit-gradient(radial, left top, left bottom, from(#AAAAAA), to(#99a9bb));
+	background: -moz-linear-gradient(top, #AAAAAA,  #99a9bb);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#888888', endColorstr='#888888');
+}
+.gray:hover {
+	background: #abb6c2;
+	background: -webkit-gradient(radial, left top, left bottom, from(#CCCCCC), to(#abb6c2));
+	background: -moz-linear-gradient(top,  #BBBBBB,  #abb6c2);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#BBBBBB', endColorstr='#abb6c2');
+}
+.gray:active {
+	color: #FFFFFF;
+	background: -webkit-gradient(radial, left top, left bottom, from(#BBBBBB), to(#abb6c2));
+	background: -moz-linear-gradient(top,  #BBBBBB,  #abb6c2);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#BBBBBB', endColorstr='#abb6c2');
+}

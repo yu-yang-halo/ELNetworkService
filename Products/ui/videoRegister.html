@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="language/language.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="js/elapi.js"></script>
+		<link rel="stylesheet" href="css/theme.css" type="text/css" charset="utf-8" />
+
+	</head>
+	<style>
+		body {
+			width: 100%;
+			height: 100%;
+			margin: 0px auto;
+		}
+		.main {
+			width: 100%;
+			height: 100%;
+			margin: 0px auto;
+			text-align: center;
+		}
+		.row {
+			text-align: center;
+			margin-top: 10px;
+			
+		}
+		label {
+			width: 68px;
+			display: inline-block;
+			text-align: right;
+		}
+		.in {
+			background-repeat: round;
+			padding-left: 2px;
+			height: 30px;
+			width: 180px;
+			font-size: 20px;
+			background-size: 100%;
+		}
+	</style>
+
+	<body>
+		<div class="main">
+			<div class="row">
+				<label>序列号</label>
+				<input class="in" id="clientSN" />
+			</div>
+			<div class="row" style="margin-top: -0;">
+				<button class="button gray" style="display: table-cell;"  id="scan">扫一扫</button>
+			</div>
+			<div class="row">
+				<label>UID:</label>
+				<input class="in"  id="uid"/>
+			</div>
+			<div class="row">
+				<label>用户名:</label>
+				<input class="in" placeholder="视频的登录账户" />
+			</div>
+				<div class="row" >
+				<label>密码:</label>
+				<input class="in" placeholder="视频的登录密码" />
+			</div>
+			<div class="row">
+				<label>名称:</label>
+				<input class="in" />
+			</div>
+			<div class="row">
+				<button class="button gray" id="registerVideo">注册</button>
+			</div>
+		</div>
+	</body>
+    <script type="text/javascript">
+		$("#scan").click(function(){
+		     hyl_scanCode(2);
+		    
+		});
+		$("#registerVideo").click(function(){
+			 var regVals=[];
+			 $(".in").each(function(){
+			 	regVals.push($(this).val());
+			 });
+		     if(regVals.length==5){
+		     	  if(regVals[0].trim()!=""&&regVals[1].trim()!=""&&regVals[2].trim()!=""&&regVals[3].trim()!=""&&regVals[4].trim()!=""){
+		     	    	hyl_registerVideoDevice(regVals[0],regVals[1],regVals[2],regVals[3],regVals[4]);
+		     	  }else{
+		     	  	   alert("数据不能为空");
+		     	  }
+		     }
+		});
+		
+		function loadScanCodeData(sn,uid){
+			$("#clientSN").val(sn);
+			$("#uid").val(uid);
+		}
+	</script>
+</html>

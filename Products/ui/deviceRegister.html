@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="language/language.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="js/elapi.js"></script>
+		<link rel="stylesheet" href="css/theme.css" type="text/css" charset="utf-8" />
+
+	</head>
+	<style>
+		body {
+			width: 100%;
+			height: 100%;
+			margin: 0px auto;
+		}
+		.main {
+			width: 100%;
+			height: 100%;
+			margin: 0px auto;
+			text-align: center;
+		}
+		.row {
+			text-align: center;
+			margin-top: 10px;
+			
+		}
+		label {
+			width: 68px;
+			display: inline-block;
+			text-align: right;
+		}
+		.in {
+			background-repeat: round;
+			padding-left: 2px;
+			height: 30px;
+			width: 180px;
+			font-size: 20px;
+			background-size: 100%;
+		}
+	</style>
+
+	<body>
+		<div class="main">
+			<div class="row">
+				<label>序列号</label>
+				<input class="in"  id="clientSN"/>
+			</div>
+			<div class="row" style="margin-top: -0;">
+				<button class="button gray" style="display: table-cell;"  id="scan">扫一扫</button>
+			</div>
+			<div class="row">
+				<label>产品类型:</label>
+				<input class="in" id="type" disabled="disabled"/>
+			</div>
+			<!--
+			<div class="row">
+				<label>验证码</label>
+				<input class="in"  id="vcode"/>
+			</div>
+			-->
+			<div class="row">
+				<label>名称:</label>
+				<input class="in" id="name"/>
+			</div>
+			<div class="row">
+				<button class="button gray" id="registeDevice">注册</button>
+			</div>
+		</div>
+	</body>
+    <script type="text/javascript">
+
+        /*
+          页面初始化加载类型列表数据
+         */
+		var web_clsInfos=[];
+		function cacheClsInfos(clsInfos){
+           web_clsInfos=clsInfos;
+        }
+
+        /*
+           手动输入方式
+        */
+
+        $('#clientSN').bind('input propertychange',
+           function() {
+             searchTypeName();
+           }
+        );
+         function searchTypeName(){
+
+           findSnClsIdClientIdArr($('#clientSN').val());
+
+        }
+
+        function findSnClsIdClientIdArr(sn){
+           if(sn.length==13){
+             hylSearchClientSn(sn);
+             return ;
+           }
+
+        }
+
+
+        /*
+          二维码扫描方式（快捷方式）
+        */
+
+		$("#scan").click(function(){
+		    hyl_scanCode(1);
+		});
+		/*
+		 *二维码回调
+		 */
+		function loadScanCodeData(sn,clientId,classId){
+			 $("#clientSN").val(sn);
+			 var csInfo={"clientSn":sn,"clientId":clientId,"classId":classId};
+			 loadClsInfosAndCcsDeviceInfo(csInfo);
+		}
+
+
+        /*
+         开始注册
+        */
+		$("#registeDevice").click(function(){
+			var regVals=[];
+			$(".in").each(function(){
+				if($(this).val().trim()!=""){
+					regVals.push($(this).val().trim());
+				}
+			});
+			
+			if(regVals.length==3){
+			    if($("#type").val()!=""){
+			        hyl_registerDevice(regVals[0],regVals[2]);
+			    }else{
+			        alert("无法确认设备类型,不能注册");
+			    }
+
+			}else{
+				alert("输入不能为空");
+			}
+			
+		});
+		
+	
+		
+
+		/*
+		    {"clientSn":"CFF000510311B","clientId":5538,"classId":-1,"accessYN":true,"typeCode":20,"useFlag":true}
+
+		    写入类型字符
+
+		*/
+
+		function loadClsInfosAndCcsDeviceInfo(ccsInfo){
+		   var clsName="";
+		   if(web_clsInfos.constructor==Array&&ccsInfo.classId>0){
+		       for(var j=0;j<web_clsInfos.length;j++){
+                      if(web_clsInfos[j].localClsId==ccsInfo.classId){
+                         clsName=web_clsInfos[j].localClsName;
+                         break;
+                       }
+
+                    }
+
+		   }
+		      if(clsName!=""){
+                $("#type").val(clsName);
+               }else{
+                $("#type").val("");
+                alert("无法找到设备类型");
+              }
+		}
+		
+	</script>
+</html>

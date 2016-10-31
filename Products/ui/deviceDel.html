@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no"/>
+    <script type="text/javascript" src="js/elapi.js" ></script>
+    <script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+    <title>设备管理</title>
+    <link rel="stylesheet" href="css/manager.css" type="text/css" charset="utf-8"/>
+    <title></title>
+    <style>
+        .del{
+           width:40px;
+           height:40px;
+           outline:none;
+           margin: 2px;
+           border:0 none;
+        }
+    </style>
+</head>
+
+<body>
+<div class='appTheme'>
+
+
+
+    <div class='deletePage'>
+        <table id="deleteTable" >
+
+        </table>
+    </div>
+
+
+</div>
+
+</body>
+<script type="text/javascript">
+           $(document).ready(function(){
+
+           })
+           function netstateImage(netState){
+               if(netState==0){
+                  return "img/icon_offline.png";
+               }else{
+                  return "img/icon_online.png";
+               }
+           }
+           function netstateText(netState){
+               if(netState==0){
+                  return "离线";
+               }else{
+                  return "在线";
+               }
+           }
+           function hyl_initTableData(devinfos,appJSON){
+           	 $("#deleteTable").empty();
+             if(devinfos!=undefined&&devinfos.length>0){
+		            for(var i=0;i<devinfos.length;i++){
+                        var obj=devinfos[i];
+		              	var tr_html_string="<tr><td class='content'><img class='icon' src='"+getClassIcon(obj.classId,appJSON)+"'></img>"+
+		              	"</td><td class='content'><div><label class='name'>"+obj.name+"</label>"+
+		              	"<img class='onlineImg' src='"+netstateImage(obj.netState)+"'></img>"+
+		              	"<label class='onlineText'>"+netstateText(obj.netState)+"</label>"+
+		              	"</div></td><td class='command'><input class='del' onclick='hyl_deleteDevice("+obj.objectId+")' type='image' src='img/del1.png'></input></td></tr>";
+                        $("#deleteTable").append(tr_html_string);
+                       }
+
+		    }else{
+		            $("#deleteTable").append("<p color='red'>没有设备数据</p>");
+		    }
+           }
+
+    </script>
+</html>

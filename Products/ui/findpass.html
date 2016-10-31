@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="language/language.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="js/elapi.js"></script>
+	<link rel="stylesheet" href="css/theme.css" type="text/css" charset="utf-8" />
+
+	<style type="text/css">
+		#btn_findPass{
+		width: 200px;
+		height: 36px;
+		}
+		.row0 input{
+		background-repeat:round;
+		background-color: transparent;
+		padding-left: 5px;
+		height: 35px;
+		width:205px;
+		font-size:18px;
+		background-size:100%;
+		}
+		div{
+		margin-top: 16px;
+		}
+	</style>
+</head>
+<body >
+
+
+<center>
+	<div class="row0">
+		<input placeholder="手机号/邮箱" id="phem"></input>
+	</div>
+	<div>
+		<button class="button gray" id="btn_findPass">密码找回</button>
+	</div>
+
+</center>
+
+
+
+
+
+</body>
+<script type="text/javascript">
+	    $("#btn_findPass").click(function(){
+             hyl_findPassCmd($("#phem").val());
+	    });
+
+	</script>
+</html>
